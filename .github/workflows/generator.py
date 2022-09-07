@@ -52,7 +52,7 @@ def generate():
 </script>""",
                 # url='https://www.python.org',
                 css_str="""   body{
- background: url(https://images.unsplash.com/photo-1661701816394-725e08664c7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8?dpr=1.25&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=); 
+ background: url(https://images.unsplash.com/photo-1493246507139-91e8fad9978e?dpr=1.25&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=); 
  background-size: cover;
 	    background-color: transparent;
   color: white;
