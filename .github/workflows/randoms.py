@@ -26,16 +26,19 @@ def get_json_files(user):
             print(repo_file)
             if repo_file["name"].endswith(".json"):
                 json_files.append(repo_file["download_url"])
-    return json_files
+    return json_files, repo_Name
 
-def get_json_data(json_files):
+def get_json_data(json_files, repo_name):
     """
     Get JSON data from a list of JSON files.
     """
     json_data = []
+    json_file = {}
+    
     for json_file in json_files:
         response = requests.get(json_file)
-        json_data.append(json.loads(json.dumps(response.json())))
+        json_file[repo_name] += json.loads(json.dumps(response.json())
+    json_data.append(json_file)                                       
     return json_data
 
 def create_json_file(json_data, user):
