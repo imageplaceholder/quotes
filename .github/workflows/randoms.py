@@ -18,8 +18,8 @@ def get_json_files(user):
         repo_name = repo["name"]
         repo_url = repo["url"]
         repo_response = requests.get("https://api.github.com/repos/{}/{}/contents/".format(user, repo_name))
-        valid_response = json.loads(json.dumps(repo_response.json()))
-        repo_files = json.dumps(valid_response)
+        repo_files = json.loads(json.dumps(repo_response.json()))
+   #     repo_files = json.dumps(valid_response)
 
 
         for repo_file in repo_files:
