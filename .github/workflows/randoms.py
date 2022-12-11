@@ -13,9 +13,9 @@ def make_index(folder):
     
     for f in os.listdir(folder):
         if os.path.isdir(os.path.join(folder, f)):
-            index.write("<li><a href='{}/index.html'>{}</a></li>".format(f, f))
+            index.write(<li><a href='{}/index.html'>{}</a></li>".format(f, f))
         else:
-            if f != 'index.html': 
+            if file != 'index.html': 
                index.write("<li><a href='{}'>{}</a></li>".format(f, f))
             
    # for root, dirs, files in os.walk(folder):
@@ -25,7 +25,6 @@ def make_index(folder):
              #       index.write('<a href="{}">{}</a><br>\n'.format(os.path.join(root, file), file))
     index.write('</body></html>\n')
     index.close()
-
 
 
 
@@ -58,7 +57,7 @@ def create_index_for_sub_folder(path):
     For every sub folder in a folder, if sub folder name is not in list. Create and write out a index file inside sub folder.
     """
     for f in os.listdir(path):
-        print(path)
+        print(os.path.join(path, f))
         if os.path.isdir(os.path.join(path, f)):
             if f not in ["git", "b", "c"]:
                 make_index(os.path.join(path, f))
