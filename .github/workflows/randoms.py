@@ -10,13 +10,14 @@ def make_index(folder):
     """
     index = open(os.path.join(folder, 'index.html'), 'w')
     index.write('<html><body>\n')
-    
-    for f in os.listdir(folder):
-        if os.path.isdir(os.path.join(folder, f)):
-            index.write("<li><a href='{}/index.html'>{}</a></li>".format(f, f))
-        else:
-            if f != 'index.html': 
-               index.write("<li><a href='{}'>{}</a></li>".format(f, f))
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file != 'index.html':
+                if os.path.isdir:
+                    index.write('<a href="{}">{}</a><br>\n'.format(os.path.join(root, file), file))
+                else:
+                    index.write("<li><a href='{}'>{}</a></li>".format(f, f))
+
             
    # for root, dirs, files in os.walk(folder):
        # for file in files:
@@ -62,4 +63,4 @@ def create_index_for_sub_folder(path):
             if f not in ["git", "b", "c"]:
                 make_index(os.path.join(path, f))
 
-create_index_for_sub_folder("/")
+create_index_for_sub_folder("./")
