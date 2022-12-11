@@ -62,4 +62,4 @@ def create_index_for_sub_folder(path):
             if f not in ["git", "b", "c"]:
                 make_index(os.path.join(path, f))
 
-create_index_for_sub_folder("./")
+create_index_for_sub_folder("/")
