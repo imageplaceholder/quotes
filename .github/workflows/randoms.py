@@ -53,8 +53,8 @@ def create_json_file(json_data, user):
 
 def main():
     user = "imageplaceholder"
-    json_files = get_json_files(user)
-    json_data = get_json_data(json_files)
+    json_files, repo_name = get_json_files(user)
+    json_data = get_json_data(json_files, repo_name)
     create_json_file(json_data, user)
 
 if __name__ == "__main__":
