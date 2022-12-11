@@ -33,13 +33,10 @@ def get_json_data(json_files, repo_name):
     Get JSON data from a list of JSON files.
     """
     json_data = []
-    json_file = {}
-    
     for json_file in json_files:
         response = requests.get(json_file)
-        json_file[json.loads(json.dumps(repo_name))] += json.loads(json.dumps(repo_name)) 
-        json_file["repo_json"] += response.json()
-    json_data.append(json.loads(json.dumps(json_file)))                              
+        json_data.append({"repo_name": repo_name} + json.loads(json.dumps(response.json())))
+        
     return json_data
 
 def create_json_file(json_data, user):
