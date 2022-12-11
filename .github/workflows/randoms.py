@@ -20,7 +20,7 @@ def get_json_files(user):
         repo_response = requests.get(repo_url)
         repo_files = repo_response.json()
         for repo_file in repo_files:
-            if str(repo_file["name"]).endswith(".json"):
+            if repo_files[repo_file]["name"].endswith(".json"):
                 json_files.append(repo_file["download_url"])
     return json_files
 
