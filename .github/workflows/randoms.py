@@ -15,7 +15,7 @@ def make_index(folder):
         if os.path.isdir(os.path.join(folder, f)):
             index.write("<li><a href='{}/index.html'>{}</a></li>".format(f, f))
         else:
-            if file != 'index.html': 
+            if f != 'index.html': 
                index.write("<li><a href='{}'>{}</a></li>".format(f, f))
             
    # for root, dirs, files in os.walk(folder):
