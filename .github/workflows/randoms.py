@@ -27,8 +27,8 @@ def get_json_files(user):
             print(repo_file)
             if repo_file["name"].endswith(".json"):
                 json_files.append(repo_file["download_url"])
-                json_files.append(repo_name)
-    return json_files, repo_name
+               # json_files.append(repo_name)
+    return json_files #, repo_name
 
 def get_json_data(json_files, repo_name):
     """
@@ -54,8 +54,9 @@ def create_json_file(json_data, user):
 
 def main():
     user = "imageplaceholder"
-    json_files, repo_name = get_json_files(user)
-    json_data = get_json_data(json_files, repo_name)
+    #json_files, repo_name = get_json_files(user)
+    json_files = get_json_files(user)    
+    json_data = get_json_data(json_files)
     create_json_file(json_data, user)
 
 if __name__ == "__main__":
