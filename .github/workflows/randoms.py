@@ -45,8 +45,7 @@ def create_json_file(json_data, user):
     Create a JSON file with JSON data & repo name.
     """
     json_file = {}
-    json_file["repo_name"] = user
-    json_file["repo_data"] = json_data
+    json_file["data"] = json_data
     with open("{}.json".format(user), "w") as f:
         json.dump(json_file, f, indent=4)
 
