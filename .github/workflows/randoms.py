@@ -62,6 +62,6 @@ def create_index_for_sub_folder(path):
         print(root, dirs, files)
         for dir in dirs:
             if dir not in folders:
-                make_index(dirs)
+                make_index(dir)
 
 create_index_for_sub_folder("./")
