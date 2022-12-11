@@ -35,7 +35,7 @@ def get_json_data(json_files):
     json_data = []
     for json_file in json_files:
         response = requests.get(json_file)
-        json_data.append(response.json())
+        json_data.append(json.loads(json.dumps(response.json())))
     return json_data
 
 def create_json_file(json_data, user):
