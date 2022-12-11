@@ -57,10 +57,10 @@ def create_index_for_sub_folder(path):
     For every sub folder in a folder, if sub folder name is not in list. Create and write out a index file inside sub folder.
     """
     make_index(path) 
-    for f in os.listdir(path):
-        print(os.path.join(path, f))
-        if os.path.isdir(os.path.join(path, f)):
-            if f not in ["git", "b", "c"]:
-                make_index(os.path.join(path, f))
+    folders = ["git", "github", "Python_Projects_3"]
+    for root, dirs, files in os.walk(path):
+        for dir in dirs:
+            if dir not in folders:
+                make_index(dir)
 
 create_index_for_sub_folder("./")
