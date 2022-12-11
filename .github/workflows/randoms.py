@@ -26,7 +26,7 @@ def get_json_files(user):
             print(repo_file)
             if repo_file["name"].endswith(".json"):
                 json_files.append(repo_file["download_url"])
-    return json_files, repo_Name
+    return json_files, repo_name
 
 def get_json_data(json_files, repo_name):
     """
