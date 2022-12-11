@@ -59,8 +59,9 @@ def create_index_for_sub_folder(path):
     make_index(path) 
     folders = [".git", ".github", "Python_Projects_3"]
     for root, dirs, files in os.walk(path):
+        print(root, dirs, files)
         for dir in dirs:
             if dir not in folders:
-                make_index(dir)
+                make_index(dirs)
 
 create_index_for_sub_folder("./")
