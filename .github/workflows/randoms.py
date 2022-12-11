@@ -30,6 +30,7 @@ def get_json_files(user):
                # json_files.append(repo_name)
     return json_files #, repo_name
 
+#def get_json_data(json_files, repo_name):
 def get_json_data(json_files, repo_name):
     """
     Get JSON data from a list of JSON files.
