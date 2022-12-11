@@ -14,6 +14,7 @@ def get_json_files(user):
     response = requests.get(url)
     repos = response.json()
     json_files = []
+    repo_names = []
     for repo in repos:
         repo_name = repo["name"]
         repo_url = repo["url"]
@@ -26,6 +27,7 @@ def get_json_files(user):
             print(repo_file)
             if repo_file["name"].endswith(".json"):
                 json_files.append(repo_file["download_url"])
+                json_files.append(repo_name)
     return json_files, repo_name
 
 def get_json_data(json_files, repo_name):
@@ -36,9 +38,8 @@ def get_json_data(json_files, repo_name):
     for json_file in json_files:
         response = requests.get(json_file)
         repo = response.json()
-        repo_name = repo["name"]
         json_data.append(json.loads(json.dumps(response.json())))
-        json_data['repo_name'] = repo_name                 
+        json_data['repo_name'] = repo_name[json_file]                 
         
     return json_data
 
