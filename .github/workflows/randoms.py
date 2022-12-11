@@ -36,6 +36,7 @@ def get_json_data(json_files, repo_name):
     for json_file in json_files:
         response = requests.get(json_file)
         json_data.append(json.loads(json.dumps(response.json()))
+        json_data[-1]['repo_name'] = repo_name                 
         
     return json_data
 
@@ -44,8 +45,8 @@ def create_json_file(json_data, user):
     Create a JSON file with JSON data & repo name.
     """
     json_file = {}
-    json_file["user"] = user
-    json_file["repos"] = json_data
+    json_file["repo_name"] = user
+    json_file["repo_data"] = json_data
     with open("{}.json".format(user), "w") as f:
         json.dump(json_file, f, indent=4)
 
