@@ -20,7 +20,7 @@ def get_json_files(user):
         repo_response = requests.get("https://api.github.com/repos/{}/{}/contents/".format(user, str(repo_name)))
         repo_files = repo_response.json()
         for repo_file in repo_files:
-            print(repo_files)
+            print(repo_file)
             if repo_file['name'].endswith(".json"):
                 json_files.append(repo_file["download_url"])
     return json_files
