@@ -26,6 +26,18 @@ def make_index(folder):
     index.write('</body></html>\n')
     index.close()
 
-make_index('./')
+##make_index('./')
 
 
+
+def create_index_for_sub_folder(path):
+    """
+    For every sub folder in a folder, if sub folder name is not in list. Create and write out a index file inside sub folder.
+    """
+    for f in os.listdir(path):
+        if os.path.isdir(os.path.join(path, f)):
+            if f not in ["a", "b", "c"]:
+                with open(os.path.join(path, f, "index.html"), "w") as fp:
+                    fp.write(make_index(os.path.join(path, f)))
+
+create_index_for_sub_folder("./")
