@@ -39,7 +39,7 @@ def get_json_data(json_files, repo_name):
         response = requests.get(json_file)
         repo = response.json()
         json_data.append(json.loads(json.dumps(response.json())))
-        json_data['repo_name'] = repo_name[json_file]                 
+       # json_data['repo_name'] = repo_name[json_file]                 
         
     return json_data
 
