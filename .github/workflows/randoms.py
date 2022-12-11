@@ -38,6 +38,6 @@ def create_index_for_sub_folder(path):
         if os.path.isdir(os.path.join(path, f)):
             if f not in ["a", "b", "c"]:
                 with open(os.path.join(path, f, "index.html"), "w") as fp:
-                    fp.write(make_index(os.path.join(path, f)))
+                    fp.write(create_index(os.path.join(path, f)))
 
-create_index_for_sub_folder("./")
+create_index_for_sub_folder("/")
