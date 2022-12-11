@@ -11,8 +11,8 @@ def make_index(folder):
     index = open(os.path.join(folder, 'index.html'), 'w')
     index.write('<html><body>\n')
     
-    for f in os.listdir(path):
-        if os.path.isdir(os.path.join(path, f)):
+    for f in os.listdir(folder):
+        if os.path.isdir(os.path.join(folder, f)):
             index.write("<li><a href='{}/index.html'>{}</a></li>".format(f, f))
         else:
             if file != 'index.html': 
