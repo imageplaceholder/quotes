@@ -8,6 +8,9 @@ def make_index(folder):
     """
     Create a HTML index of all files in a folder & sub folder.
     """
+    if folder in [".git", ".github", "c"]:
+        break
+        
     index = open(os.path.join(folder, 'index.html'), 'w')
     index.write('<html><body>\n')
     
@@ -59,6 +62,7 @@ def create_index_for_sub_folder(path):
     """
     For every sub folder in a folder, if sub folder name is not in list. Create and write out a index file inside sub folder.
     """
+    make_index(path)
     for f in os.listdir(path):
         print(path)
         if os.path.isdir(os.path.join(path, f)):
