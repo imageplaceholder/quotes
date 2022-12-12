@@ -10,7 +10,7 @@ def make_index(folder):
     """
     
     if folder in [".git", ".github", "c"]:
-        break
+        return
         
     index = open(os.path.join(folder, 'index.html'), 'w')
     index.write('<html><body>\n')
