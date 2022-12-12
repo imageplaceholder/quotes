@@ -35,7 +35,7 @@ def create_index(path, exclude_folders, exclude_files):
     for folder in folders:
         index_file.write("<a href=\"" + folder + "/\">" + folder + "/</a>\n")
     for file in files:
-        index_file.write(file + "\n")
+        index_file.write("<a href='{}'>{}</a>".format(f, f))
     index_file.write("</pre>\n")
     index_file.write("<hr>\n")
     index_file.write("</body>\n")
@@ -67,7 +67,7 @@ def main():
     path = "./"
     exclude = [".github", ".git"]
     exclude_folders = []
-    exclude_files = []
+    exclude_files = ["index.html"]
     if exclude:
         for item in exclude:
             if os.path.isdir(os.path.join(path, item)):
