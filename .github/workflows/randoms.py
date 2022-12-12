@@ -37,7 +37,8 @@ def make_index(folder):
     print(os.path.dirname(folder))
     for f in os.listdir(folder):
         if os.path.isdir(os.path.join(folder, f)):
-            Directories += "<li><a href='{}/index.html'>{}</a></li>".format(f, f)
+            if f not in [".git", ".github"]:
+                Directories += "<li><a href='{}/index.html'>{}</a></li>".format(f, f)
         else:
             if f != 'index.html': 
                Files += "<li><a href='{}'>{}</a></li>".format(f, f)
