@@ -46,10 +46,10 @@ class IndexGenerator:
             f.write(self.index_file_content)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Generate a HTML index of a website, with option to exclude file names and folders.')
-    parser.add_argument('-p', '--path', help='Path to the website', required=True)
-    parser.add_argument('-ef', '--exclude_files', help='File names to exclude', nargs='+')
-    parser.add_argument('-efd', '--exclude_folders', help='Folder names to exclude', nargs='+')
-    args = parser.parse_args()
+    #parser = argparse.ArgumentParser(description='Generate a HTML index of a website, with option to exclude file names and folders.')
+    #parser.add_argument('-p', '--path', help='Path to the website', required=True)
+    #parser.add_argument('-ef', '--exclude_files', help='File names to exclude', nargs='+')
+   # parser.add_argument('-efd', '--exclude_folders', help='Folder names to exclude', nargs='+')
+  #  args = parser.parse_args()
     index_generator = IndexGenerator("./", null, null)
     index_generator.generate_index()
