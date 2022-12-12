@@ -1,3 +1,20 @@
+### To do 
+# get modified dates
+# get all files in sub / sub folders. 
+# icons for file types 
+# add go back to parent directory for sub folders.
+# add way to exclude files from directory listing.
+# add way to exclude folders from directory listing. 
+# improve / fix proper usage of checking if folder.
+# avoid all .github related folder (.git / .github etc..)
+# use jinja template for easier customization. 
+# make function to make a single index in a single folder. (ie; do not add index.html to folder files.)
+
+### Javascript To Do
+## Click to sort. 
+## Possibily a search feature.
+
+
 """
 1. Create a function to make a HTML index of all files in a folder & sub folder.
 """
@@ -6,7 +23,7 @@ import os
 
 def make_index(folder):
     """
-    Create a HTML index of all files in a folder & sub folder.
+    Create a HTML index of all files in a folder.
     """
     
     if os.path.dirname(folder) in ["git", "github"]:
@@ -26,11 +43,6 @@ def make_index(folder):
                Files += "<li><a href='{}'>{}</a></li>".format(f, f)
                #index.write("<li><a href='{}'>{}</a></li>".format(f, f))
             
-   # for root, dirs, files in os.walk(folder):
-       # for file in files:
-            #if file != 'index.html':
-              #  if os.path.isdir(os.path.join(root, file)):
-             #       index.write('<a href="{}">{}</a><br>\n'.format(os.path.join(root, file), file))
     index.write(Directories + Files + '</body></html>\n')
     index.close()
 
@@ -38,31 +50,9 @@ def make_index(folder):
 
 
 
-     #   for f in os.listdir(folder):
-      #      if os.path.isdir(os.path.join(folder, f)):
-       #         index.write("<li><a href='{}/index.html'>{}</a></li>".format(f, f))
-        #    else:
-         #       v     
-
-          #          if os.path.isdir(os.path.join(folder, f)):
-           # index.write("<li><a href='{}/index.html'>{}</a></li>".format(f, f))
-       # else:
-        #    if f != 'index.html': 
-         #      index.write("<li><a href='{}'>{}</a></li>".format(f, f))
-   # for root, dirs, files in os.walk(folder):
-       # for file in files:
-            #if file != 'index.html':
-              #  if os.path.isdir(os.path.join(root, file)):
-             #       index.write('<a href="{}">{}</a><br>\n'.format(os.path.join(root, file), file))
-
-                
-##make_index('./')
-
-
-
 def create_index_for_sub_folder(path):
     """
-    For every sub folder in a folder, if sub folder name is not in list. Create and write out a index file inside sub folder.
+    Function to create index file for every sub folder inside of a path.
     """
     make_index(path)
     for f in os.listdir(path):
@@ -71,4 +61,6 @@ def create_index_for_sub_folder(path):
             if f not in ["git", "github", ".github"]:
                 make_index(os.path.join(path, f))
 
+                
+## pass the path to make HTML index directorys for                
 create_index_for_sub_folder("./")
