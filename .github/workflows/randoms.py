@@ -17,6 +17,7 @@ def make_index(folder):
     
     Directories = ""
     Files = ""
+    print(folder)
     for f in os.listdir(folder):
         if os.path.isdir(os.path.join(folder, f)):
             Directories += "<li><a href='{}/index.html'>{}</a></li>".format(f, f)
