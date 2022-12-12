@@ -9,7 +9,7 @@ def make_index(folder):
     Create a HTML index of all files in a folder & sub folder.
     """
     
-    if folder in [".git", ".github", "c"]:
+    if folder in ["git", "github", "c"]:
         return
         
     index = open(os.path.join(folder, 'index.html'), 'w')
