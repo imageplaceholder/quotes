@@ -51,5 +51,5 @@ if __name__ == '__main__':
     #parser.add_argument('-ef', '--exclude_files', help='File names to exclude', nargs='+')
    # parser.add_argument('-efd', '--exclude_folders', help='Folder names to exclude', nargs='+')
   #  args = parser.parse_args()
-    index_generator = IndexGenerator("./", Null, Null)
+    index_generator = IndexGenerator("./", None, [".github", "github"])
     index_generator.generate_index()
