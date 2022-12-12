@@ -1,8 +1,12 @@
+## Project: Create a function to make a HTML index of all files in a folder & sub-folders (optional). So it can be used to directory list all files on a static
+## website like GitHub Pages. 
+
 ### To do 
 # get modified dates
 # get all files in sub / sub folders. 
 # icons for file types 
-# add go back to parent directory for sub folders.
+# add go back to parent directory in HTML for sub folders.
+# add breadcrumbs to show where in directory you are. 
 # add way to exclude files from directory listing.
 # add way to exclude folders from directory listing. 
 # improve / fix proper usage of checking if folder.
@@ -12,12 +16,10 @@
 
 ### Javascript To Do
 ## Click to sort. 
-## Possibily a search feature.
+## Possibily a search feature bar.
 
 
-"""
-1. Create a function to make a HTML index of all files in a folder & sub folder.
-"""
+
 
 import os
 
