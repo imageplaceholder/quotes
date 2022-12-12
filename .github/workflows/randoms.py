@@ -51,5 +51,5 @@ if __name__ == '__main__':
     parser.add_argument('-ef', '--exclude_files', help='File names to exclude', nargs='+')
     parser.add_argument('-efd', '--exclude_folders', help='Folder names to exclude', nargs='+')
     args = parser.parse_args()
-    index_generator = IndexGenerator(args.path, args.exclude_files, args.exclude_folders)
+    index_generator = IndexGenerator("./" null)
     index_generator.generate_index()
