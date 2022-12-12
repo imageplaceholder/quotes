@@ -35,7 +35,7 @@ def create_index(path, exclude_folders, exclude_files):
     for folder in folders:
         index_file.write("<a href=\"" + folder + "/\">" + folder + "/</a>\n")
     for file in files:
-        index_file.write("<a href='{}'>{}</a>".format(f, f))
+        index_file.write("<a href='{}'>{}</a>".format(file, file))
     index_file.write("</pre>\n")
     index_file.write("<hr>\n")
     index_file.write("</body>\n")
