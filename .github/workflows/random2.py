@@ -8,7 +8,7 @@ import argparse
 import shutil
 import glob
 import re
-
+import time
 
 ## Check if parent directory. 
 FirstFolderProcessed = False
@@ -28,6 +28,14 @@ def readable_size(size):
         size /= 1024.0
     return "%.1f %s" % (size, 'YB')
 
+
+
+
+def mtime_to_timestamp(mtime):
+    """
+    Convert mtime to timestamp.
+    """
+    return time.mktime(time.strptime(mtime, "%Y-%m-%d %H:%M:%S"))
 
 
 def create_index(path, exclude_folders, exclude_files):
@@ -55,7 +63,6 @@ def create_index(path, exclude_folders, exclude_files):
         self.index_file_content += '<tr><th colspan="5"><hr></th></tr>\n'
         self.index_file_content += '<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>\n'
         self.index_file_content += '<tr><th colspan="5"><hr></th></tr>\n'
-
     def generate_index(self):
         for root, dirs, files in os.walk(self.path):
             for file in files:
@@ -93,26 +100,25 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("</head>\n")
     index_file.write("<body>\n")
     index_file.write("<h1>Index of " + path + "</h1>\n")
-    index_file.write('<table><tr><th valign="top"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th></tr>\n')
+    index_file.write('<table><tr><th valign="top"><span></span></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     if FirstFolderProcessed is True:
-        index_file.write('<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
+        index_file.write('<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     print(FirstFolderProcessed)
     for folder in folders:
         dir_path = os.path.join(path, folder)
         print(dir_path)
-        dir_size = os.path.getsize(dir_path)
-        dir_last_modified = os.path.getmtime(dir_path)
-        folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) 
+        dir_size = readable_size(os.path.getsize(dir_path))
+        dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
+        folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
         FirstFolderProcessed = True
     for file in files:
         file_path = os.path.join(path, file)
         print(file_path + "file")
-        file_size = os.path.getsize(file_path)
-        file_size = readable_size(file_size)
-        file_last_modified = os.path.getmtime(file_path)
+        file_size = readable_size(os.path.getsize(file_path))
+        file_last_modified = mtime_to_timestamp(os.path.getmtime(file_path))
         file_ext = file.split(".")[-1]
-        file_string = f'<tr><td valign="top"><span class="fiv-cla fiv-icon-{file_ext}"></span></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) 
+        file_string = f'<tr><td valign="top"><span class="fiv-cla fiv-icon-{file_ext}"></span></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(file_string)
         FirstFolderProcessed = True
     index_file.write('</table>\n')
@@ -122,7 +128,6 @@ def create_index(path, exclude_folders, exclude_files):
     # Create index in sub folders
     for folder in folders:
         create_index(os.path.join(path, folder), exclude_folders, exclude_files)
-        
 
 def main():
     """
