@@ -36,7 +36,36 @@ def mtime_to_timestamp(mtime):
     """
     Convert mtime to timestamp.
     """
-    return datetime.datetime.fromtimestamp(mtime).strftime('%Y-%m-%d %H:%M:%S')
+    return datetime.datetime.fromtimestamp(mtime).strftime('%Y-%m-%d %H:%M')
+
+
+
+def is_github():
+    """
+    function to detect if running on GitHub.
+    """
+    return os.environ.get('GITHUB_ACTIONS', None) is not None
+
+
+
+## Function to get File Creation Dates (GitHub)
+def lastmod_github(f) :
+    """
+    function to get file mod dates for Github!
+    f - filename
+    
+    -1 returns last Commit For Git Log 
+   --reverse returns First Commit
+    """
+    mod = subprocess.run(['git', 'log', '-1', '--format=%cI', f],
+                    stdout=subprocess.PIPE,
+                    universal_newlines=True).stdout.strip()
+    if len(mod) == 0 :
+        mod = datetime.datetime.now().astimezone().replace(microsecond=0).isoformat()
+    return mod
+
+
+
 
 
 def create_index(path, exclude_folders, exclude_files):
@@ -104,7 +133,7 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write('<table><tr><th valign="top"><span></span></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     if FirstFolderProcessed is True:
         index_file.write('<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
-    print(FirstFolderProcessed)
+    print(is_github())
     for folder in folders:
         dir_path = os.path.join(path, folder)
         print(dir_path)
