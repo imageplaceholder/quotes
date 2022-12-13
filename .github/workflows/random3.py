@@ -43,7 +43,7 @@ def get_download_url(url):
             folder_api_url = repo_url + '/contents/' + folder_path
             # Get the response from GitHub api for the folder.
             folder_response = requests.get(folder_api_url)
-            if folder_response.status_code == 200:
+            if folder_response.status_code != 200:
                 break
             # Get the response content for the folder.
             folder_response_content = folder_response.content
@@ -89,6 +89,9 @@ def seperate_by_folder(url):
     api_url = repo_url + '/contents'
     # Get the response from GitHub api.
     response = requests.get(api_url)
+    if folder_response.status_code != 200:
+        break
+    
     # Get the response content.
     response_content = response.content
     # Get the response content in json format.
