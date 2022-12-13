@@ -163,6 +163,7 @@ sortTable(document.querySelector(".test"), 1, false)
     if FirstFolderProcessed is True:
         index_file.write('<tr><td valign="top"><img src="http://cdn.onlinewebfonts.com/svg/img_68649.png" style="padding-top:2px; height:14px"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="center"> - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     print(is_github())
+    index_file.write('</thead>')
     for folder in folders:
         dir_path = os.path.join(path, folder)
     ## DISABLED - apache Directory does not use directory size  -  dir_size = readable_size(os.path.getsize(dir_path))
@@ -172,7 +173,6 @@ sortTable(document.querySelector(".test"), 1, false)
             dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
         folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '/">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="center"> - </td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
-        index_file.write('</thead>')
         FirstFolderProcessed = True
     for file in files:
         file_path = os.path.join(path, file)
