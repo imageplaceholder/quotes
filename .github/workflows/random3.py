@@ -23,6 +23,7 @@ def get_download_url(url):
     api_url = repo_url + '/contents'
     # Get the response from GitHub api.
     response = requests.get(api_url)
+    print(response.status_code)
     if response.status_code != 200:
         return
     # Get the response content.
@@ -89,6 +90,7 @@ def seperate_by_folder(url):
     repo_url = urlparse(url).scheme + '://' + urlparse(url).netloc + '/' + repo_owner + '/' + repo_name
     # Get the GitHub api url.
     api_url = repo_url + '/contents'
+    print(api_url)
     # Get the response from GitHub api.
     response = requests.get(api_url)
     if response.status_code != 200:
