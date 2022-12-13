@@ -19,6 +19,31 @@ FirstFolderProcessed = False
 
 
 
+"""
+Create a function to write out a jinja template.
+"""
+
+import os
+import jinja2
+import yaml
+
+def write_template(template_file, output_file):
+    """
+    Write out a jinja template.
+    """
+    # Load the template
+    template_loader = jinja2.FileSystemLoader(searchpath=os.path.dirname(template_file))
+    template_env = jinja2.Environment(loader=template_loader)
+    template = template_env.get_template(os.path.basename(template_file))
+    
+    test = "fsdfsd"
+
+    # Write out the template
+    with open(output_file, 'w') as f:
+        f.write(template.render(GEN_DIRS = test))
+
+
+write_template(".github/workflows/template.html", ".github/workflows/test.html")
 
 def readable_size(size):
     """
