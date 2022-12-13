@@ -121,7 +121,7 @@ def seperate_by_folder(url):
 
 if __name__ == '__main__':
     # Get download url for all folders and files in a GitHub repo.
-    download_url_list = get_download_url('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
+    #download_url_list = get_download_url('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
     # print(download_url_list)
     # Seperate each folder name by object with the folder name & folder path download urls in JSON file.
-    seperate_by_folder(download_url_list)
+    seperate_by_folder('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
