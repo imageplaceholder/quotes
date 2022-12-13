@@ -20,12 +20,9 @@ def get_download_url(url):
     # Get the repo url from the url.
     repo_url = urlparse(url).scheme + '://' + urlparse(url).netloc + '/' + repo_owner + '/' + repo_name
     # Get the GitHub api url.
-    api_url = 'https://api.github.com/repos/' + repo_owner + '/' + repo_name + '/contents'
+    api_url = repo_url + '/contents'
     # Get the response from GitHub api.
     response = requests.get(api_url)
-    print(api_url)
-    if response.status_code != 200:
-        return
     # Get the response content.
     response_content = response.content
     # Get the response content in json format.
@@ -43,11 +40,9 @@ def get_download_url(url):
             # Add the folder download url to the download url list.
             download_url_list.append(folder_download_url)
             # Get the GitHub api url for the folder.
-            folder_api_url = 'https://api.github.com/repos/' + repo_owner + '/' + repo_name + '/contents/' + folder_path
+            folder_api_url = repo_url + '/contents/' + folder_path
             # Get the response from GitHub api for the folder.
             folder_response = requests.get(folder_api_url)
-            if folder_response.status_code != 200:
-                return
             # Get the response content for the folder.
             folder_response_content = folder_response.content
             # Get the response content in json format for the folder.
@@ -89,20 +84,15 @@ def seperate_by_folder(url):
     # Get the repo url from the url.
     repo_url = urlparse(url).scheme + '://' + urlparse(url).netloc + '/' + repo_owner + '/' + repo_name
     # Get the GitHub api url.
-    api_url = 'https://api.github.com/repos/' + repo_owner + '/' + repo_name + '/contents'
-    print(api_url)
+    api_url = repo_url + '/contents'
     # Get the response from GitHub api.
     response = requests.get(api_url)
-    if response.status_code != 200:
-        return
     # Get the response content.
     response_content = response.content
     # Get the response content in json format.
     response_content_json = json.loads(response_content)
     # Create a list to store the folder name.
     folder_name_list = []
-    print(response_content_json)
-    print(api_url)
     # Get the folder name for each folder in the repo.
     for item in response_content_json:
         # If the item is a folder.
@@ -131,7 +121,7 @@ def seperate_by_folder(url):
 
 if __name__ == '__main__':
     # Get download url for all folders and files in a GitHub repo.
-    # download_url_list = get_download_url('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
+    download_url_list = get_download_url('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
     # print(download_url_list)
     # Seperate each folder name by object with the folder name & folder path download urls in JSON file.
     seperate_by_folder('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
