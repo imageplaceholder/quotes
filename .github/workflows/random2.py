@@ -138,7 +138,10 @@ def create_index(path, exclude_folders, exclude_files):
         dir_path = os.path.join(path, folder)
         print(dir_path)
         dir_size = readable_size(os.path.getsize(dir_path))
-        dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
+        if isgithub() is True:
+            dir_last_modified = lastmod_github(dir_path)
+        else:
+            dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
         folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
         FirstFolderProcessed = True
@@ -146,7 +149,10 @@ def create_index(path, exclude_folders, exclude_files):
         file_path = os.path.join(path, file)
         print(file_path + "file")
         file_size = readable_size(os.path.getsize(file_path))
-        file_last_modified = mtime_to_timestamp(os.path.getmtime(file_path))
+        if isgithub() is True:
+            file_last_modified = lastmod_github(file_path)
+        else:
+            file_last_modified = mtime_to_timestamp(os.path.getmtime(file_path))
         file_ext = file.split(".")[-1]
         file_string = f'<tr><td valign="top"><span class="fiv-cla fiv-icon-{file_ext}"></span></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(file_string)
