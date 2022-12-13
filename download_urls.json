@@ -1,45 +1,7 @@
 {
     ".github": [],
-    "Lecture-Slides": [
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture%20-%20DevEnvSetup.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture01-WhatIsHTML.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture02-HistoryOfHTML.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture03-AnatomyOfATag.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture04-BasicDocumentStructure.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture05-ContentModelsDivSpan.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture06-HeadingsAndSomeSemanticElements.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture07-Lists.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture08-HTMLEntities.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture09-Links.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture10-Images.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture11-PowerOfCss.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture12-AnatomyOfACssRule.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture13-ElementClassIDSelectors.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture14-CombiningSelectors.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture15-PseudoClassSelectors.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture17-ConflictResolution.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture19-BoxModel.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture22-Positioning.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture23-MediaQueries.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture24-ResponsiveDesign.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture25-IntroToBootstrap.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture26-BootstrapGridSystem.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture27-VisitWithTheClient.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture41-VarsFunctionsScope.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture42-JSTypes.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture47-ByValueByReference.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture56-HTTPBasics.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture57-AjaxBasics.pdf",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/Lecture-Slides/Lecture58-JSON.pdf"
-    ],
-    "assignments": [],
-    "examples": [],
-    "images": [
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/images/CorrectQuizResponse.png",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/images/GitHubCloneOrDownloadButton.png",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/images/GitHubCopyCloneLink.png",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/images/GitHubPagesMasterBranch.png",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/images/GitHubPagesSettings.png",
-        "https://raw.githubusercontent.com/jhu-ep-coursera/fullstack-course4/master/images/IncorrectQuizResponse.png"
+    "test": [
+        "https://raw.githubusercontent.com/imageplaceholder/quotes/main/test/index.html",
+        "https://raw.githubusercontent.com/imageplaceholder/quotes/main/test/me.md"
     ]
 }
