@@ -48,9 +48,9 @@ def create_json(files_list, output):
 def main():
    # args = get_args()
     #files_list = get_files(args.path, args.exclude, args.files)
-    files_lists = "./", [".github"], None
+   # files_lists = "./", [".github"], None
     output = "./"
-    create_json(files_list, output)
-
+    #create_json(files_list, output)
+    create_json(["./", ""] "./")
 if __name__ == '__main__':
     main()
