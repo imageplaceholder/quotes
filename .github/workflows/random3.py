@@ -38,13 +38,13 @@ def get_download_urls(repo_name, repo_info, exclude_folders=[], exclude_files=[]
     """
     download_urls = {}
     for item in repo_info:
-        print(item["type"])
-        if item["type"] == "dir":
-            if item["name"] not in exclude_folders:
-                download_urls[item["name"]] = get_download_urls(repo_name, item["_links"]["self"], exclude_folders, exclude_files)
-        elif item["type"] == "file":
-            if item["name"] not in exclude_files:
-                download_urls[item["name"]] = get_download_url(repo_name, item["path"])
+        print(repo_info[item])
+        if repo_info[item]["type"] == "dir":
+            if repo_info[item]["name"] not in exclude_folders:
+                download_urls[repo_info[item]["name"]] = get_download_urls(repo_name, repo_info[item]["_links"]["self"], exclude_folders, exclude_files)
+        elif repo_info[item]["type"] == "file":
+            if repo_info[item]["name"] not in exclude_files:
+                download_urls[item["name"]] = get_download_url(repo_name, repo_info[item]["path"])
     return download_urls
 
 def main():
