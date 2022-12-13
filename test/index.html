@@ -1,5 +1,22 @@
 <html>
-<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
+<head> 
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
+    <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/plug-ins/1.10.7/sorting/file-size.js"></script>
+    <script>
+    $(document).ready(function() {
+  $('#example').DataTable({
+     "columnDefs": [
+       { "type": "file-size", "targets": 1 }
+     ]    
+  });
+});
+</script>
+    
+    
 <title>Index of ./test</title>
 </head>
 <body>
@@ -8,8 +25,8 @@
  <tr><th colspan="5"><hr></th></tr>
 <tr><td valign="top"><img src="http://cdn.onlinewebfonts.com/svg/img_68649.png" style="padding-top:2px; height:14px"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="center"> - </td><td>&nbsp;</td></tr>
  <tr><th colspan="5"><hr></th></tr>
-<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="test/">test</a></td><td align="right">2022-12-13 09:33</td><td align="center"> - </td><td>&nbsp;</td></tr>
-<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="test2/">test2</a></td><td align="right">2022-12-13 09:33</td><td align="center"> - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="test/">test</a></td><td align="right">2022-12-13 09:49</td><td align="center"> - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="test2/">test2</a></td><td align="right">2022-12-13 09:49</td><td align="center"> - </td><td>&nbsp;</td></tr>
 <tr><td valign="top"><span class="fiv-cla fiv-icon-md"></span></td><td><a href="me.md">me.md</a></td><td align="right">2022-12-11 22:21</td><td align="right">2.0 B</td><td>&nbsp;</td></tr>
 </table>
 </body>

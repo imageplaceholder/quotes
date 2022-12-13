@@ -1,12 +1,29 @@
 <html>
-<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
+<head> 
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
+    <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/plug-ins/1.10.7/sorting/file-size.js"></script>
+    <script>
+    $(document).ready(function() {
+  $('#example').DataTable({
+     "columnDefs": [
+       { "type": "file-size", "targets": 1 }
+     ]    
+  });
+});
+</script>
+    
+    
 <title>Index of ./</title>
 </head>
 <body>
 <h1>Index of ./</h1>
 <table><tr><th valign="top"><span></span></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
  <tr><th colspan="5"><hr></th></tr>
-<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="test/">test</a></td><td align="right">2022-12-13 09:33</td><td align="center"> - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="test/">test</a></td><td align="right">2022-12-13 09:49</td><td align="center"> - </td><td>&nbsp;</td></tr>
 <tr><td valign="top"><span class="fiv-cla fiv-icon-png"></span></td><td><a href="science.png">science.png</a></td><td align="right">2022-12-12 01:34</td><td align="right">340.6 KB</td><td>&nbsp;</td></tr>
 <tr><td valign="top"><span class="fiv-cla fiv-icon-png"></span></td><td><a href="love.png">love.png</a></td><td align="right">2022-12-12 01:34</td><td align="right">320.4 KB</td><td>&nbsp;</td></tr>
 <tr><td valign="top"><span class="fiv-cla fiv-icon-png"></span></td><td><a href="film.png">film.png</a></td><td align="right">2022-12-12 01:34</td><td align="right">350.6 KB</td><td>&nbsp;</td></tr>
