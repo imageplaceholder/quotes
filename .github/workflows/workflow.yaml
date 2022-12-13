@@ -25,7 +25,7 @@ jobs:
       - name: Installed package list
         run: apt list --installed
       - name: Install all necessary packages
-        run: pip install html2image requests pygal
+        run: pip install html2image requests pygal jinja2
       - name: Run the quote generator
         working-directory: ./
         run: |
