@@ -128,7 +128,7 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("<h1>Index of " + path + "</h1>\n")
     index_file.write('<table><tr><th valign="top"><span></span></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     if FirstFolderProcessed is True:
-        index_file.write('<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
+        index_file.write('<tr><td valign="top"><span class="fiv-cla fiv-icon-arrow-left"></span></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     print(is_github())
     for folder in folders:
         dir_path = os.path.join(path, folder)
@@ -138,7 +138,7 @@ def create_index(path, exclude_folders, exclude_files):
             dir_last_modified = mtime_to_timestamp(convert_gh_timestamp(lastmod_github(dir_path)))
         else:
             dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
-        folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
+        folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '/">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
         FirstFolderProcessed = True
     for file in files:
