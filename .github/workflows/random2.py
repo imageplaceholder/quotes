@@ -40,14 +40,14 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("<pre>\n") 
     index_file.write("<a href=\"../\">../</a>\n")
     for folder in folders:
-        dir_path = os.path.join(root, folder)
+        dir_path = os.path.join(path, folder)
         print(dir_path)
         dir_size = os.path.getsize(dir_path)
         dir_last_modified = os.path.getmtime(dir_path)
         folder_string = '<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
     for file in files:
-        file_path = os.path.join(root, file)
+        file_path = os.path.join(path, file)
         print(file_path + "file")
         file_size = os.path.getsize(file_path)
         file_last_modified = os.path.getmtime(file_path)
