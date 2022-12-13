@@ -10,6 +10,7 @@ import glob
 import re
 import time
 import datetime
+import subprocess
 
 ## Check if parent directory. 
 FirstFolderProcessed = False
