@@ -9,7 +9,7 @@ import shutil
 import glob
 import re
 
-FirstFolderProcessed = False
+
 
 def create_index(path, exclude_folders, exclude_files):
     """
@@ -55,6 +55,9 @@ def create_index(path, exclude_folders, exclude_files):
         self.index_file_content += '</body>\n'
         self.index_file_content += '</html>\n'
     """
+    # Add parent directory link 
+    FirstFolderProcessed = False
+    
     # Get all folders in path
     folders = [f for f in os.listdir(path) if os.path.isdir(os.path.join(path, f))]
     # Remove excluded folders
