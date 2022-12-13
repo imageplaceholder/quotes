@@ -26,7 +26,7 @@ def get_download_url(url):
     # Get the response content.
     response_content = response.content
     # Get the response content in json format.
-    response_content_json = json.loads(response_content)
+    response_content_json = json.load(response_content)
     # Get the download url for each folder and file in the repo.
     for item in response_content_json:
         # If the item is a folder.
@@ -48,7 +48,7 @@ def get_download_url(url):
             # Get the response content for the folder.
             folder_response_content = folder_response.content
             # Get the response content in json format for the folder.
-            folder_response_content_json = json.loads(folder_response_content)
+            folder_response_content_json = json.load(folder_response_content)
             # Get the download url for each file in the folder.
             for folder_item in folder_response_content_json:
                 # If the item is a file.
@@ -94,7 +94,7 @@ def seperate_by_folder(url):
     # Get the response content.
     response_content = response.content
     # Get the response content in json format.
-    response_content_json = json.loads(response_content)
+    response_content_json = json.load(response_content)
     # Create a list to store the folder name.
     folder_name_list = []
     # Get the folder name for each folder in the repo.
