@@ -42,7 +42,7 @@ def write_template(template_file, output_file):
         f.write(template.render(GEN_DIRS = test))
 
 
-write_template(".github/workflows/template.html", ".github/workflows/test.html")
+write_template(".github/workflows/template.html", "./test.html")
 
 def readable_size(size):
     """
