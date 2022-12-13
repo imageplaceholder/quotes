@@ -73,7 +73,7 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("<h1>Index of " + path + "</h1>\n")
     index_file.write("<hr>\n")
     index_file.write("<pre>\n")
-    If FirstFolderProcessed is True:
+    if FirstFolderProcessed is True:
         index_file.write("<a href=\"../\">../</a>\n")
     index_file.write("""<table>\n
     '<tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n'
