@@ -9,6 +9,7 @@ import shutil
 import glob
 import re
 import time
+import datetime
 
 ## Check if parent directory. 
 FirstFolderProcessed = False
@@ -35,7 +36,7 @@ def mtime_to_timestamp(mtime):
     """
     Convert mtime to timestamp.
     """
-    return datetime.datetime.fromtimestamp(mtime).strftime('%Y-%m-%d %H:%M:%S')
+    return time.mktime(time.strptime(mtime, '%Y-%m-%dT%H:%M:%S%z'))
 
 
 def create_index(path, exclude_folders, exclude_files):
