@@ -36,7 +36,7 @@ def mtime_to_timestamp(mtime):
     """
     Convert mtime to timestamp.
     """
-    return time.mktime(time.strptime(mtime, '%Y-%m-%dT%H:%M:%S%z'))
+    return datetime.datetime.fromtimestamp(mtime).strftime('%Y-%m-%d %H:%M:%S')
 
 
 def create_index(path, exclude_folders, exclude_files):
