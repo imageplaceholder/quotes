@@ -123,24 +123,7 @@ def create_index(path, exclude_folders, exclude_files, exclude_file_exts):
     # Create index file
     index_file = open(os.path.join(path, "index.html"), "w")
     index_file.write("<html>\n")
-    index_file.write("""<head> 
-    <meta charset="ISO-8859-1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
-    <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/plug-ins/1.10.7/sorting/file-size.js"></script>
-    <script>
-    $(document).ready(function() {
-  $('#example').DataTable({
-     "columnDefs": [
-       { "type": "file-size", "targets": 1 }
-     ]    
-  });
-});
-</script>
-    
-    \n""" )
+    index_file.write('<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> \n' )
     index_file.write("<title>Index of " + path + "</title>\n")
     index_file.write("</head>\n")
     index_file.write("<body>\n")
