@@ -150,8 +150,7 @@ def create_index(path, exclude_folders, exclude_files):
         else:
             file_last_modified = mtime_to_timestamp(os.path.getmtime(file_path))
         file_ext = file.split(".")[-1]
-        print(file + file_ext)
-        if file_ext is None:
+        if file_ext is file: ## must be a better way of checking if split value was true without using a def.
             file_ext = "blank"        
         file_string = f'<tr><td valign="top"><span class="fiv-cla fiv-icon-{file_ext}"></span></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(file_string)
