@@ -41,6 +41,16 @@ def mtime_to_timestamp(mtime):
 
 
 
+
+
+def convert_timestamp(timestamp):
+    """
+    Convert timestamp to integer.
+    """
+    return int(datetime.datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S').timestamp())
+
+
+
 def is_github():
     """
     function to detect if running on GitHub.
@@ -140,7 +150,7 @@ def create_index(path, exclude_folders, exclude_files):
         print(dir_path)
         dir_size = readable_size(os.path.getsize(dir_path))
         if is_github() is True:
-            dir_last_modified = lastmod_github(dir_path)
+            dir_last_modified = mtime_to_timestamp(convert_timestamp(lastmod_github(dir_path)))
         else:
             dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
         folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
@@ -151,7 +161,7 @@ def create_index(path, exclude_folders, exclude_files):
         print(file_path + "file")
         file_size = readable_size(os.path.getsize(file_path))
         if is_github() is True:
-            file_last_modified = lastmod_github(file_path)
+            file_last_modified = mtime_to_timestamp(convert_timestamp(lastmod_github(file_path)))
         else:
             file_last_modified = mtime_to_timestamp(os.path.getmtime(file_path))
         file_ext = file.split(".")[-1]
