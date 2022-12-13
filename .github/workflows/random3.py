@@ -124,4 +124,4 @@ if __name__ == '__main__':
     download_url_list = get_download_url('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
     # print(download_url_list)
     # Seperate each folder name by object with the folder name & folder path download urls in JSON file.
-    seperate_by_folder('https://github.com/hupili/python-for-data-and-media-communication-gitbook')
+    seperate_by_folder(download_url_list)
