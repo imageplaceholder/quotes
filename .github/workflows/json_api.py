@@ -19,7 +19,7 @@ def get_files(path, exclude, files):
     files_list = []
     for root, dirs, files in os.walk(path):
         for file in files:
-            if file.endswith(".html"):
+            if not file.endswith(".html"):
                 if exclude:
                     if not any(x in root for x in exclude):
                         if files:
