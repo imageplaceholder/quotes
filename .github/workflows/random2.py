@@ -10,6 +10,8 @@ import glob
 import re
 
 
+## Check if parent directory. 
+FirstFolderProcessed = False
 
 def create_index(path, exclude_folders, exclude_files):
     """
@@ -56,7 +58,7 @@ def create_index(path, exclude_folders, exclude_files):
         self.index_file_content += '</html>\n'
     """
     # Add parent directory link 
-    FirstFolderProcessed = False
+    global FirstFolderProcessed
     
     # Get all folders in path
     folders = [f for f in os.listdir(path) if os.path.isdir(os.path.join(path, f))]
