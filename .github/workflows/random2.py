@@ -103,7 +103,7 @@ def lastmod_github(f) :
 
 # The main index generator function *
 
-def create_index(path, exclude_folders, exclude_files):
+def create_index(path, exclude_folders, exclude_files, exclude_file_exts):
     """
     Function that creates a HTML index inside every folder and sub folder in a path.
     """
@@ -118,6 +118,8 @@ def create_index(path, exclude_folders, exclude_files):
     files = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     # Remove excluded files
     files = [f for f in files if f not in exclude_files]
+    # Remove exluded file extensions 
+    files = [f for f in files if f.split(".")[-1] not in exclude_file_exts]
     # Create index file
     index_file = open(os.path.join(path, "index.html"), "w")
     index_file.write("<html>\n")
@@ -132,13 +134,12 @@ def create_index(path, exclude_folders, exclude_files):
     print(is_github())
     for folder in folders:
         dir_path = os.path.join(path, folder)
-        print(dir_path)
-        dir_size = readable_size(os.path.getsize(dir_path))
+    ## DISABLED - apache Directory does not use directory size  -  dir_size = readable_size(os.path.getsize(dir_path))
         if is_github() is True:
             dir_last_modified = mtime_to_timestamp(convert_gh_timestamp(lastmod_github(dir_path)))
         else:
             dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
-        folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '/">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
+        folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '/">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right"> - </td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
         FirstFolderProcessed = True
     for file in files:
@@ -192,13 +193,14 @@ def main():
     exclude = [".github", ".git"]
     exclude_folders = []
     exclude_files = ["index.html"]
+    exclude_file_exts = []
     if exclude:
         for item in exclude:
             if os.path.isdir(os.path.join(path, item)):
                 exclude_folders.append(item)
             elif os.path.isfile(os.path.join(path, item)):
                 exclude_files.append(item)
-    create_index(path, exclude_folders, exclude_files)
+    create_index(path, exclude_folders, exclude_files, exclude_file_exts)
 
 if __name__ == "__main__":
     main()
