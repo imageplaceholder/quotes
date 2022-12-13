@@ -172,6 +172,7 @@ sortTable(document.querySelector(".test"), 1, false)
             dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
         folder_string = '<tr><td valign="top"><span class="fiv-cla fiv-icon-folder"></span></td><td><a href="' + folder + '/">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="center"> - </td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
+        index_file.write('</thead>')
         FirstFolderProcessed = True
     for file in files:
         file_path = os.path.join(path, file)
