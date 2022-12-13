@@ -39,7 +39,7 @@ def get_download_urls(repo_name, repo_info, exclude_folders=[], exclude_files=[]
     download_urls = {}
     Counter = 0
     for item in repo_info:
-        Counter += 1
+        print(item)
         print(item[Counter])
         print(item[repo_info])
         print(item[repo_info])
