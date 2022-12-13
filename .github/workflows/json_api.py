@@ -50,7 +50,7 @@ def main():
     #files_list = get_files(args.path, args.exclude, args.files)
     files_lists = "./", [".github"], None
     output = "./"
-    create_json(files_list, args.output)
+    create_json(files_list, output)
 
 if __name__ == '__main__':
     main()
