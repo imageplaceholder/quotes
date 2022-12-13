@@ -144,7 +144,7 @@ let Click = 1
 function sort(tab){
   console.log("sort")
   if (Click === 1){
-sortTable(document.querySelector(".test"), 1, false)
+sortTable(document.querySelector(".test"), tab, false)
     Click += 1
   } else{
     Click -= 1
@@ -153,13 +153,51 @@ sortTable(document.querySelector(".test"), 1, false)
   
   return false;
 }
+
+
+
+var fileSizeTypes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+function sort_size(){
+  let table = document.querySelector("table tbody")
+ // console.log(table)
+  var rows = table.getElementsByTagName('tr');
+  var rowArray = [];
+  for (var i = 0; i < rows.length; i++) {
+    rowArray.push(rows[i]);
+  }
+  rowArray.sort(function(a, b) {
+    var fileSizeA = a.getElementsByTagName('td')[3].innerHTML;
+    var fileSizeB = b.getElementsByTagName('td')[3].innerHTML;
+    var fileSizeTypeA = fileSizeA.substring(fileSizeA.length - 2);
+    var fileSizeTypeB = fileSizeB.substring(fileSizeB.length - 2);
+    var fileSizeNumberA = parseInt(fileSizeA.substring(0, fileSizeA.length - 2));
+    var fileSizeNumberB = parseInt(fileSizeB.substring(0, fileSizeB.length - 2));
+    if (fileSizeTypeA === fileSizeTypeB) {
+      return fileSizeNumberA - fileSizeNumberB;
+    } else {
+      return fileSizeTypes.indexOf(fileSizeTypeA) - fileSizeTypes.indexOf(fileSizeTypeB);
+    }
+  });
+  if (Clicked === 1) {
+    Clicked += 1 
+  } else {
+    rowArray.reverse();
+    Clicked -=1
+  }
+  for (var i = 0; i < rowArray.length; i++) {
+    table.appendChild(rowArray[i]);
+  }
+  return false;
+};
+
     </script>
     """ )
     index_file.write("<title>Index of " + path + "</title>\n")
     index_file.write("</head>\n")
     index_file.write("<body>\n")
     index_file.write("<h1>Index of " + path + "</h1>\n")
-    index_file.write("""<table class="test"><thead><tr><th valign="top"><span></span></th><th><a href="#" onclick="sort(1)">Name</a></th><th><a href="#" onclick="sort(2)">Last modified</a></th><th><a href="#" onclick="sort(3)">Size</a></th><th><a href="#" onclick="sort(4)">Descriptdion</a></th></tr>
+    index_file.write("""<table class="test"><thead><tr><th valign="top"><span></span></th><th><a href="#" onclick="sort(1)">Name</a></th><th><a href="#" onclick="sort(2)">Last modified</a></th><th><a href="#" onclick="sort_size()">Size</a></th><th><a href="#" onclick="sort(4)">Descriptdion</a></th></tr>
  <tr><th colspan="5"><hr></th></tr>\n""")
     if FirstFolderProcessed is True:
         index_file.write('<tr><td valign="top"><img src="http://cdn.onlinewebfonts.com/svg/img_68649.png" style="padding-top:2px; height:14px"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="center"> - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
