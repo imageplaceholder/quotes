@@ -52,4 +52,4 @@ def get_download_urls(repo_url):
         json.dump(download_urls, f, indent=4)
 
 if __name__ == '__main__':
-    get_download_urls('https://github.com/jhu-ep-coursera/fullstack-course4')
+    get_download_urls('https://github.com/imageplaceholder/quotes')
