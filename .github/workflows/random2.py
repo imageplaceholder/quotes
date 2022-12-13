@@ -47,7 +47,7 @@ def convert_timestamp(timestamp):
     """
     Convert timestamp to integer.
     """
-    return int(datetime.datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S').timestamp())
+    return int(datetime.datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S%z').timestamp())
 
 
 
