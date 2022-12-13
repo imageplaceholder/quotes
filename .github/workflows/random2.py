@@ -33,7 +33,7 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("<pre>\n") 
     index_file.write("<a href=\"../\">../</a>\n")
     for folder in folders:
-        dir_path = os.path.dirname(file)
+        dir_path = os.path.dirname(folder)
         print(dir_path)
         dir_size = os.path.getsize(dir_path)
         dir_last_modified = os.path.getmtime(dir_path)
