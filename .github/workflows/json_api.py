@@ -51,6 +51,6 @@ def main():
    # files_lists = "./", [".github"], None
     output = "./"
     #create_json(files_list, output)
-    create_json(["./", ""] "./")
+    create_json(get_files("./", [".github"], None))
 if __name__ == '__main__':
     main()
