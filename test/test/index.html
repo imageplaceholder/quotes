@@ -1,27 +1,39 @@
 <html>
-<head> 
-    <meta charset="ISO-8859-1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
-    <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/plug-ins/1.10.7/sorting/file-size.js"></script>
-    <script>
-    $(document).ready(function() {
-  $('#example').DataTable({
-     "columnDefs": [
-       { "type": "file-size", "targets": 1 }
-     ]    
+<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
+ 
+    /* Create a function to sort a HTML table by a value. */
+function sortTable(table, col, reverse) {
+  var tb = table.tBodies[0], // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
+    tr = Array.prototype.slice.call(tb.rows, 0), // put rows into array
+    i;
+  reverse = -((+reverse) || -1);
+  tr = tr.sort(function (a, b) { // sort rows
+    return reverse // `-1 *` if want opposite order
+      * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
+        .localeCompare(b.cells[col].textContent.trim())
+        );
   });
-});
-</script>
+  for(i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
+}
+
+let Click = 1
+function sort(){
+  console.log("sort")
+  if (Click === 1){
+sortTable(document.querySelector(".test"), 1, false)
+    Click += 1
+  } else{
+    Click -= 1
+    sortTable(document.querySelector(".test"), 1, true)
+  }
+  
+}
     
-    
-<title>Index of ./test/test</title>
+    <title>Index of ./test/test</title>
 </head>
 <body>
 <h1>Index of ./test/test</h1>
-<table><tr><th valign="top"><span></span></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+<table class="test"><thead><tr><th valign="top"><span></span></th><th><a href="#" onclick="sort()">Name</a></th><th><a href="#" onclick="return false;">Last modified</a></th><th><a href="#" onclick="return false;">Size</a></th><th><a href="#" onclick="return false;">Descriptdion</a></th></tr>
  <tr><th colspan="5"><hr></th></tr>
 <tr><td valign="top"><img src="http://cdn.onlinewebfonts.com/svg/img_68649.png" style="padding-top:2px; height:14px"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="center"> - </td><td>&nbsp;</td></tr>
  <tr><th colspan="5"><hr></th></tr>
