@@ -138,7 +138,7 @@ def create_index(path, exclude_folders, exclude_files):
         dir_path = os.path.join(path, folder)
         print(dir_path)
         dir_size = readable_size(os.path.getsize(dir_path))
-        if isgithub() is True:
+        if is_github() is True:
             dir_last_modified = lastmod_github(dir_path)
         else:
             dir_last_modified = mtime_to_timestamp(os.path.getmtime(dir_path))
@@ -149,7 +149,7 @@ def create_index(path, exclude_folders, exclude_files):
         file_path = os.path.join(path, file)
         print(file_path + "file")
         file_size = readable_size(os.path.getsize(file_path))
-        if isgithub() is True:
+        if is_github() is True:
             file_last_modified = lastmod_github(file_path)
         else:
             file_last_modified = mtime_to_timestamp(os.path.getmtime(file_path))
