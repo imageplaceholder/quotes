@@ -78,9 +78,8 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("<pre>\n")
     if FirstFolderProcessed is True:
         index_file.write("<a href=\"../\">../</a>\n")
-    index_file.write("""<table>\n
-    '<tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n'
-    """)
+    print(FirstFolderProcessed)
+    index_file.write('<table><tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n')
     for folder in folders:
         dir_path = os.path.join(path, folder)
         print(dir_path)
