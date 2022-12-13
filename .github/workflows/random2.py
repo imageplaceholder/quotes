@@ -11,6 +11,13 @@ import re
 
 def create_index(path, exclude_folders, exclude_files):
     """
+                      self.index_file_content += '<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
+            for dir in dirs:
+                if dir not in self.exclude_folders:
+                    dir_path = os.path.join(root, dir)
+                    dir_size = os.path.getsize(dir_path)
+                    dir_last_modified = os.path.getmtime(dir_path)
+                    self.index_file_content += '<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="' + dir + '">' + dir + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
     Create a function that creates a HTML index inside every folder and sub folder in a path. With option  to exclude folders by names and files by names.
     """
     # Get all folders in path
@@ -33,18 +40,18 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("<pre>\n") 
     index_file.write("<a href=\"../\">../</a>\n")
     for folder in folders:
-        dir_path = os.path.dirname(folder)
+        dir_path = os.path.join(root, folder)
         print(dir_path)
-        dir_size = ""
-        dir_last_modified = ""
-        folder_string = '<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="' + dir + '">' + dir + '</a></td><td align="right">' + dir_last_modified + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
+        dir_size = os.path.getsize(dir_path)
+        dir_last_modified = os.path.getmtime(dir_path)
+        folder_string = '<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
     for file in files:
-        file_path = file
+        file_path = os.path.join(root, file)
         print(file_path + "file")
-        file_size = ""
-        file_last_modified = ""
-        file_string = '<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + file_last_modified + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
+        file_size = os.path.getsize(file_path)
+        file_last_modified = os.path.getmtime(file_path)
+        file_string = '<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(file_string)
     index_file.write("</pre>\n") 
     index_file.write("<hr>\n")
