@@ -141,16 +141,17 @@ function sortTable(table, col, reverse) {
 }
 
 let Click = 1
-function sort(){
+function sort(tab){
   console.log("sort")
   if (Click === 1){
 sortTable(document.querySelector(".test"), 1, false)
     Click += 1
   } else{
     Click -= 1
-    sortTable(document.querySelector(".test"), 1, true)
+    sortTable(document.querySelector(".test"), tab, true)
   }
   
+  return false;
 }
     </script>
     """ )
@@ -158,7 +159,7 @@ sortTable(document.querySelector(".test"), 1, false)
     index_file.write("</head>\n")
     index_file.write("<body>\n")
     index_file.write("<h1>Index of " + path + "</h1>\n")
-    index_file.write("""<table class="test"><thead><tr><th valign="top"><span></span></th><th><a href="#" onclick="sort()">Name</a></th><th><a href="#" onclick="return false;">Last modified</a></th><th><a href="#" onclick="return false;">Size</a></th><th><a href="#" onclick="return false;">Descriptdion</a></th></tr>
+    index_file.write("""<table class="test"><thead><tr><th valign="top"><span></span></th><th><a href="#" onclick="sort(1)">Name</a></th><th><a href="#" onclick="sort(2)">Last modified</a></th><th><a href="#" onclick="sort(3)">Size</a></th><th><a href="#" onclick="sort(4)">Descriptdion</a></th></tr>
  <tr><th colspan="5"><hr></th></tr>\n""")
     if FirstFolderProcessed is True:
         index_file.write('<tr><td valign="top"><img src="http://cdn.onlinewebfonts.com/svg/img_68649.png" style="padding-top:2px; height:14px"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="center"> - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
