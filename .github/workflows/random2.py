@@ -24,9 +24,7 @@ FirstFolderProcessed = False
 Create a function to write out a jinja template.
 """
 
-import os
-import jinja2
-import yaml
+
 
 def write_template(template_file, output_file):
     """
