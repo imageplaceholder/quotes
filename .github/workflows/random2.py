@@ -71,7 +71,7 @@ def create_index(path, exclude_folders, exclude_files):
     # Create index file
     index_file = open(os.path.join(path, "index.html"), "w")
     index_file.write("<html>\n")
-    index_file.write("<head>\n")
+    index_file.write('<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> \n' )
     index_file.write("<title>Index of " + path + "</title>\n")
     index_file.write("</head>\n")
     index_file.write("<body>\n")
@@ -93,7 +93,8 @@ def create_index(path, exclude_folders, exclude_files):
         print(file_path + "file")
         file_size = os.path.getsize(file_path)
         file_last_modified = os.path.getmtime(file_path)
-        file_string = '<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
+        file_ext = file.split(".")[-1]
+        file_string = f'<tr><td valign="top"><span class="fiv-cla fiv-icon-{file_ext}"></span></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(file_string)
         FirstFolderProcessed = True
     index_file.write('</table>\n')
