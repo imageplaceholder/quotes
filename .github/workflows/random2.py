@@ -41,7 +41,7 @@ def create_index(path, exclude_folders, exclude_files):
         file_path = file
         file_size = os.path.getsize(file_path)
         file_last_modified = os.path.getmtime(file_path)
-        index_file.write('<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n)
+        index_file.write('<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n')
     index_file.write("</pre>\n") 
     index_file.write("<hr>\n")
     index_file.write("</body>\n")
