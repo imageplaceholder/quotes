@@ -35,15 +35,15 @@ def create_index(path, exclude_folders, exclude_files):
     for folder in folders:
         dir_path = os.path.dirname(folder)
         print(dir_path)
-        dir_size = dir_path
-        dir_last_modified = os.path.getmtime(dir_path)
+        dir_size = ""
+        dir_last_modified = ""
         folder_string = '<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="' + dir + '">' + dir + '</a></td><td align="right">' + dir_last_modified + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(folder_string)
     for file in files:
         file_path = file
-        print(file_path)
-        file_size = os.path.getsize(file_path)
-        file_last_modified = os.path.getmtime(file_path)
+        print(file_path + "file")
+        file_size = ""
+        file_last_modified = ""
         file_string = '<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + file_last_modified + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n'
         index_file.write(file_string)
     index_file.write("</pre>\n") 
