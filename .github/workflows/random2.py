@@ -123,12 +123,42 @@ def create_index(path, exclude_folders, exclude_files, exclude_file_exts):
     # Create index file
     index_file = open(os.path.join(path, "index.html"), "w")
     index_file.write("<html>\n")
-    index_file.write('<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> \n' )
+    index_file.write("""<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> \n 
+    /* Create a function to sort a HTML table by a value. */
+function sortTable(table, col, reverse) {
+  var tb = table.tBodies[0], // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
+    tr = Array.prototype.slice.call(tb.rows, 0), // put rows into array
+    i;
+  reverse = -((+reverse) || -1);
+  tr = tr.sort(function (a, b) { // sort rows
+    return reverse // `-1 *` if want opposite order
+      * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
+        .localeCompare(b.cells[col].textContent.trim())
+        );
+  });
+  for(i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
+}
+
+let Click = 1
+function sort(){
+  console.log("sort")
+  if (Click === 1){
+sortTable(document.querySelector(".test"), 1, false)
+    Click += 1
+  } else{
+    Click -= 1
+    sortTable(document.querySelector(".test"), 1, true)
+  }
+  
+}
+    
+    """ )
     index_file.write("<title>Index of " + path + "</title>\n")
     index_file.write("</head>\n")
     index_file.write("<body>\n")
     index_file.write("<h1>Index of " + path + "</h1>\n")
-    index_file.write('<table><tr><th valign="top"><span></span></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
+    index_file.write("""<table class="test"><thead><tr><th valign="top"><span></span></th><th><a href="#" onclick="sort()">Name</a></th><th><a href="#" onclick="return false;">Last modified</a></th><th><a href="#" onclick="return false;">Size</a></th><th><a href="#" onclick="return false;">Descriptdion</a></th></tr>
+ <tr><th colspan="5"><hr></th></tr>\n""")
     if FirstFolderProcessed is True:
         index_file.write('<tr><td valign="top"><img src="http://cdn.onlinewebfonts.com/svg/img_68649.png" style="padding-top:2px; height:14px"></td><td><a href="../">Parent Directory</a></td><td>&nbsp;</td><td align="center"> - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     print(is_github())
@@ -194,6 +224,7 @@ def main():
     exclude_folders = []
     exclude_files = ["index.html"]
     exclude_file_exts = []
+    
     if exclude:
         for item in exclude:
             if os.path.isdir(os.path.join(path, item)):
