@@ -43,6 +43,8 @@ def get_download_url(url):
             folder_api_url = repo_url + '/contents/' + folder_path
             # Get the response from GitHub api for the folder.
             folder_response = requests.get(folder_api_url)
+            if folder_response.status_code == 200:
+                break
             # Get the response content for the folder.
             folder_response_content = folder_response.content
             # Get the response content in json format for the folder.
