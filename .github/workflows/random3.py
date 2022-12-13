@@ -49,7 +49,7 @@ def get_download_url(url):
             if folder_response.status_code != 200:
                 return
             # Get the response content for the folder.
-            folder_response_content = folder_response.text
+            folder_response_content = folder_response.content
             # Get the response content in json format for the folder.
             folder_response_content_json = json.loads(folder_response_content)
             # Get the download url for each file in the folder.
@@ -96,7 +96,7 @@ def seperate_by_folder(url):
     if response.status_code != 200:
         return
     # Get the response content.
-    response_content = response.text
+    response_content = response.content
     # Get the response content in json format.
     response_content_json = json.loads(response_content)
     # Create a list to store the folder name.
