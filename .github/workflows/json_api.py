@@ -19,7 +19,7 @@ def get_files(path, exclude, files):
     files_list = []
     for root, dirs, files in os.walk(path):
         for file in files:
-            if not file.endswith(".html"):
+            if file:
                 if exclude:
                     if not any(x in root for x in exclude):
                         if files:
@@ -51,6 +51,6 @@ def main():
    # files_lists = "./", [".github"], None
     output = "./"
     #create_json(files_list, output)
-    create_json(get_files("./", [".github"], None), "json_api")
+    create_json(get_files("/", [".github"], []), "json_api")
 if __name__ == '__main__':
     main()
