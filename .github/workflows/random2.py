@@ -89,6 +89,7 @@ def create_index(path, exclude_folders, exclude_files):
         dir_last_modified = os.path.getmtime(dir_path)
         folder_string = '<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="' + folder + '">' + folder + '</a></td><td align="right">' + str(dir_last_modified) + '</td><td align="right">' + str(dir_size) + '</td><td>&nbsp;</td></tr>\n' + '<tr><th colspan="5"><hr></th></tr>\n'
         index_file.write(folder_string)
+        FirstFolderProcessed = True
     for file in files:
         file_path = os.path.join(path, file)
         print(file_path + "file")
@@ -96,6 +97,7 @@ def create_index(path, exclude_folders, exclude_files):
         file_last_modified = os.path.getmtime(file_path)
         file_string = '<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="' + file + '">' + file + '</a></td><td align="right">' + str(file_last_modified) + '</td><td align="right">' + str(file_size) + '</td><td>&nbsp;</td></tr>\n' + '<tr><th colspan="5"><hr></th></tr>\n'
         index_file.write(file_string)
+        FirstFolderProcessed = True
     index_file.write('</table>\n')
     index_file.write("</pre>\n") 
     index_file.write("<hr>\n")
@@ -105,7 +107,7 @@ def create_index(path, exclude_folders, exclude_files):
     # Create index in sub folders
     for folder in folders:
         create_index(os.path.join(path, folder), exclude_folders, exclude_files)
-        FirstFolderProcessed = True
+        
 
 def main():
     """
