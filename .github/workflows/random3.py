@@ -1,55 +1,87 @@
 """
-Create a function to get all download urls for all folders and sub folders in a GitHub repo from GitHub api. Seperate each folder name by object with the folder name & all the download urls inside folder. Then save to JSON file.
+Create a function that creates a JSON file with every download url for all folders and sub folders in a Github repo from GitHub API. Seperate each folder name by object with the folder name with all the download urls. With option to exclude folders or files by names.
 """
 
 import requests
 import json
 import os
-import re
+import sys
+import argparse
 
-def get_download_urls(repo_url):
+def get_repo_info(repo_name):
     """
-    Get all download urls for all folders and sub folders in a GitHub repo from GitHub api. Seperate each folder name by object with the folder name & all the download urls inside folder. Then save to JSON file.
+    Get the repo info from the GitHub API.
     """
+    url = "https://api.github.com/repos/{}/contents".format(repo_name)
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print("Error: {}".format(response.status_code))
+        sys.exit(1)
 
-    # Get the repo name from the url
-    repo_name = re.search(r'github.com/(.*)', repo_url).group(1)
+def get_download_url(repo_name, file_name):
+    """
+    Get the download url for a file from the GitHub API.
+    """
+    url = "https://api.github.com/repos/{}/contents/{}".format(repo_name, file_name)
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()["download_url"]
+    else:
+        print("Error: {}".format(response.status_code))
+        sys.exit(1)
 
-    # Get the repo content from GitHub api
-    repo_content = requests.get('https://api.github.com/repos/{}/contents'.format(repo_name)).json()
-
-    # Create a dictionary to store the folder name & download urls
+def get_download_urls(repo_name, repo_info, exclude_folders=[], exclude_files=[]):
+    """
+    Get the download urls for all files in a repo.
+    """
     download_urls = {}
+    for item in repo_info:
+        if item["type"] == "dir":
+            if item["name"] not in exclude_folders:
+                download_urls[item["name"]] = get_download_urls(repo_name, item["_links"]["self"], exclude_folders, exclude_files)
+        elif item["type"] == "file":
+            if item["name"] not in exclude_files:
+                download_urls[item["name"]] = get_download_url(repo_name, item["path"])
+    return download_urls
 
-    # Loop through all the files and folders in the repo
-    for item in repo_content:
-        # If the item is a folder
-        if item['type'] == 'dir':
-            # Get the folder name
-            folder_name = item['name']
+def main():
+    """
+    Main function.
+    """
+    #parser = argparse.ArgumentParser(description="Create a JSON file with all download urls for all folders and sub folders in a Github repo from GitHub API.")
+    #parser.add_argument("repo_name", help="The name of the repo.")
+    #parser.add_argument("-o", "--output", help="The name of the output file.")
+    #parser.add_argument("-e", "--exclude", help="The name of the file with the folders and files to exclude.")
+   # args = parser.parse_args()
 
-            # Get the folder content from GitHub api
-            folder_content = requests.get(item['url']).json()
+    #repo_name = args.repo_name
+    #output_file = args.output
+    #exclude_file = args.exclude
+    repo_name = "imageplaceholder/quotes"
+    output_file = "test.json"
+    exclude_file = []
+    exclude_folders = []
+    exclude_files = []
+    if exclude_file:
+        with open(exclude_file, "r") as f:
+            for line in f:
+                if line.startswith("#"):
+                    continue
+                if line.startswith("folder:"):
+                    exclude_folders.append(line.split(":")[1].strip())
+                elif line.startswith("file:"):
+                    exclude_files.append(line.split(":")[1].strip())
 
-            # Create a list to store the download urls
-            urls = []
+    repo_info = get_repo_info(repo_name)
+    download_urls = get_download_urls(repo_name, repo_info, exclude_folders, exclude_files)
 
-            # Loop through all the files and folders in the folder
-            for file in folder_content:
-                # If the item is a file
-                if file['type'] == 'file':
-                    # Get the download url
-                    url = file['download_url']
+    if output_file:
+        with open(output_file, "w") as f:
+            json.dump(download_urls, f, indent=4)
+    else:
+        print(json.dumps(download_urls, indent=4))
 
-                    # Add the download url to the list
-                    urls.append(url)
-
-            # Add the folder name & download urls to the dictionary
-            download_urls[folder_name] = urls
-
-    # Save the dictionary to a JSON file
-    with open('download_urls.json', 'w') as f:
-        json.dump(download_urls, f, indent=4)
-
-if __name__ == '__main__':
-    get_download_urls('https://github.com/imageplaceholder/quotes')
+if __name__ == "__main__":
+    main()
