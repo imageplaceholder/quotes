@@ -76,12 +76,10 @@ def create_index(path, exclude_folders, exclude_files):
     index_file.write("</head>\n")
     index_file.write("<body>\n")
     index_file.write("<h1>Index of " + path + "</h1>\n")
-    index_file.write("<hr>\n")
-    index_file.write("<pre>\n")
+    index_file.write('<table><tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     if FirstFolderProcessed is True:
-        index_file.write("<a href=\"../\">../</a>\n")
+        index_file.write('<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>\n <tr><th colspan="5"><hr></th></tr>\n')
     print(FirstFolderProcessed)
-    index_file.write('<table><tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>\n')
     for folder in folders:
         dir_path = os.path.join(path, folder)
         print(dir_path)
@@ -99,8 +97,6 @@ def create_index(path, exclude_folders, exclude_files):
         index_file.write(file_string)
         FirstFolderProcessed = True
     index_file.write('</table>\n')
-    index_file.write("</pre>\n") 
-    index_file.write("<hr>\n")
     index_file.write("</body>\n")
     index_file.write("</html>\n")
     index_file.close()
