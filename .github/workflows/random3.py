@@ -18,7 +18,7 @@ def get_download_url(url):
     # Get the repo owner from the url.
     repo_owner = urlparse(url).path.split('/')[-2]
     # Get the repo url from the url.
-    repo_url = urlparse(url).scheme + '://' + urlparse(url).netloc + '/' + repo_owner + '/' + repo_name
+    repo_url = url
     # Get the GitHub api url.
     api_url = 'https://api.github.com/repos/' + repo_owner + '/' + repo_name + '/contents'
     # Get the response from GitHub api.
@@ -82,9 +82,9 @@ def seperate_by_folder(url):
     # Get the repo owner from the url.
     repo_owner = urlparse(url).path.split('/')[-2]
     # Get the repo url from the url.
-    repo_url = urlparse(url).scheme + '://' + urlparse(url).netloc + '/' + repo_owner + '/' + repo_name
+    repo_url = ""
     # Get the GitHub api url.
-    api_url = repo_url + '/contents'
+    api_url = 'https://api.github.com/repos/' + repo_owner + '/' + repo_name + '/contents'
     # Get the response from GitHub api.
     response = requests.get(api_url)
     # Get the response content.
