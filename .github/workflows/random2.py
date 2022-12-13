@@ -124,6 +124,7 @@ def create_index(path, exclude_folders, exclude_files, exclude_file_exts):
     index_file = open(os.path.join(path, "index.html"), "w")
     index_file.write("<html>\n")
     index_file.write("""<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> \n 
+    <script>
     /* Create a function to sort a HTML table by a value. */
 function sortTable(table, col, reverse) {
   var tb = table.tBodies[0], // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
@@ -151,7 +152,7 @@ sortTable(document.querySelector(".test"), 1, false)
   }
   
 }
-    
+    </script>
     """ )
     index_file.write("<title>Index of " + path + "</title>\n")
     index_file.write("</head>\n")
