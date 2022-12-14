@@ -56,4 +56,4 @@ def write_json(path, data):
     with open(path, 'w') as f:
         json.dump(data, f, indent=4)
 
-write_json("", list_path_recursive("", [".git", ".github", ".git/", ".github", "git" "github"]))
+write_json(".", list_path_recursive(".", [".git", ".github", ".git/", ".github", "git" "github"]))
