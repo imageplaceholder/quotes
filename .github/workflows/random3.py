@@ -28,13 +28,13 @@ class GitHubRepoDownloader:
         repo_download_urls = []
         for repo_content in self.repo_contents:
             print(repo_content)
-            if repo_content['type'] == 'file':
+            if repo_content[repo_content] == 'file':
                 if self.exclude_file_names:
                     if repo_content['name'] not in self.exclude_file_names:
                         repo_download_urls.append(repo_content['download_url'])
                 else:
                     repo_download_urls.append(repo_content['download_url'])
-            elif repo_content['type'] == 'dir':
+            elif repo_content[repo_content] == 'dir':
                 if self.exclude_folders:
                     if repo_content['name'] not in self.exclude_folders:
                         repo_download_urls.extend(self.get_repo_download_urls_from_folder(repo_content['url']))
