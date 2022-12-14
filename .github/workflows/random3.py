@@ -40,7 +40,7 @@ def get_download_urls(repo_name, repo_info, exclude_folders=[], exclude_files=[]
     Counter = 0
     for item in repo_info:
         Counter += 1
-        print(item[int(Counter)])
+        print(item[int(0)])
         #print(item[Counter])
         if item["type"] == "dir":
             if repo_info[item]["name"] not in exclude_folders:
