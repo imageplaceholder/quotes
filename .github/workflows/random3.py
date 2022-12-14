@@ -14,7 +14,8 @@ def get_repo_tree(repo_url):
     # get the repo owner from the url
     repo_owner = repo_url.split('/')[-2]
     # get the repo tree
-    repo_tree = requests.get(f'https://api.github.com/repos/{repo_owner}/{repo_name}/git/trees/master?recursive=1').json()
+    #repos/imageplaceholder/quotes/branches/main
+    repo_tree = requests.get(f'https://api.github.com/repos/{repo_owner}/{repo_name}/branches/main?recursive=1').json()
     # create a list to store the tree
     tree = []
     # loop through the tree
