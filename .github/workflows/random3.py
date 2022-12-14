@@ -69,7 +69,7 @@ class GitHubRepoDownloader:
             f.write(self.repo_download_urls_json)
 
 if __name__ == '__main__':
-    GitHubRepoDownloader("https://github.com/imageplaceholder/quotes/", [], [])
+    GitHubRepoDownloader("https://github.com/imageplaceholder/quotes", [], [])
    # parser = argparse.ArgumentParser()
    # parser.add_argument('repo_url', help='GitHub repo url')
    # parser.add_argument('--exclude_file_names', nargs='+', help='List of file names to exclude')
