@@ -11,4 +11,12 @@ def path_to_dict(path):
         d['type'] = "file"
     return d
 
-print json.dumps(path_to_dict('.'))
+data = json.dumps(path_to_dict('.'))
+
+
+def write_json(path, data):
+    with open(path, 'w') as f:
+        json.dump(data, f, indent=4)
+
+write_json("test-tree.json", data)  
+        
