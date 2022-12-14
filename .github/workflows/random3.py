@@ -1,90 +1,77 @@
-"""
-Create a function that creates a JSON file with all folders and files of a GitHub repo represented in a tree directory format with parent folder URL included. 
+""" 
+Create a class to write a JSON file of all files and folders (including sub folders) download_urls from a GitHub repo with option to exclude file names and folders.
 """
 
-import requests
+import os
 import json
+import requests
+import argparse
 
-def get_repo_tree(repo_url):
-    """
-    Create a function that creates a JSON file with all folders and files of a GitHub repo represented in a tree directory format with parent folder URL included. 
-    """
-    # get the repo name from the url
-    repo_name = repo_url.split('/')[-1]
-    # get the repo owner from the url
-    repo_owner = repo_url.split('/')[-2]
-    # get the repo tree
-    #repos/imageplaceholder/quotes/branches/main
-    repo_tree = requests.get(f'https://api.github.com/repos/{repo_owner}/{repo_name}/branches/main?recursive=1').json()
-    # create a list to store the tree
-    tree = []
-    repo_tree = repo_tree['commit']
-    print(repo_tree)                    
-    # loop through the tree
-    for item in repo_tree:
-        item = repo_tree[item]
-        print(item)
-        # if the item is a folder
-        if item == 'tree':
-            # add the folder to the tree
-            tree.append({'name': item['path'], 'url': item['url'], 'type': item['type']})
-        # if the item is a file
-        elif item == 'blob':
-            # add the file to the tree
-            tree.append({'name': item['path'], 'url': item['url'], 'type': item['type']})
-    # create a list to store the tree
-    tree_list = []
-    # loop through the tree
-    for item in tree:
-        # if the item is a folder
-        if item['type'] == 'tree':
-            # get the folder name
-            folder_name = item['name']
-            # get the folder url
-            folder_url = item['url']
-            # get the folder path
-            folder_path = folder_name.split('/')
-            # create a list to store the folder path
-            folder_path_list = []
-            # loop through the folder path
-            for folder in folder_path:
-                # add the folder to the folder path list
-                folder_path_list.append(folder)
-                # if the folder path list is not empty
-                if folder_path_list:
-                    # get the parent folder name
-                    parent_folder_name = '/'.join(folder_path_list[:-1])
-                    # get the parent folder url
-                    parent_folder_url = [folder['url'] for folder in tree if folder['name'] == parent_folder_name][0]
-                    # add the folder to the tree list
-                    tree_list.append({'name': folder, 'url': folder_url, 'parent_folder_name': parent_folder_name, 'parent_folder_url': parent_folder_url, 'type': item['type']})
-        # if the item is a file
-        elif item['type'] == 'blob':
-            # get the file name
-            file_name = item['name']
-            # get the file url
-            file_url = item['url']
-            # get the file path
-            file_path = file_name.split('/')
-            # create a list to store the file path
-            file_path_list = []
-            # loop through the file path
-            for file in file_path:
-                # add the file to the file path list
-                file_path_list.append(file)
-                # if the file path list is not empty
-                if file_path_list:
-                    # get the parent folder name
-                    parent_folder_name = '/'.join(file_path_list[:-1])
-                    # get the parent folder url
-                    parent_folder_url = [folder['url'] for folder in tree if folder['name'] == parent_folder_name][0]
-                    # add the file to the tree list
-                    tree_list.append({'name': file, 'url': file_url, 'parent_folder_name': parent_folder_name, 'parent_folder_url': parent_folder_url, 'type': item['type']})
-    # create a json file with the tree list
-    with open(f'{repo_name}_tree.json', 'w') as f:
-        json.dump(tree_list, f, indent=4)
+class GitHubRepoDownloader:
+    def __init__(self, repo_url, exclude_file_names=None, exclude_folders=None):
+        self.repo_url = repo_url
+        self.exclude_file_names = exclude_file_names
+        self.exclude_folders = exclude_folders
+        self.repo_name = self.repo_url.split('/')[-1]
+        self.repo_owner = self.repo_url.split('/')[-2]
+        self.repo_contents_url = f'https://api.github.com/repos/{self.repo_owner}/{self.repo_name}/contents'
+        self.repo_contents = self.get_repo_contents()
+        self.repo_download_urls = self.get_repo_download_urls()
+        self.repo_download_urls_json = self.get_repo_download_urls_json()
+        self.write_repo_download_urls_json()
 
-# get the repo url
-repo_url = "imageplaceholder/quotes"
-# get the repo tree
-get_repo_tree(repo_url)
+    def get_repo_contents(self):
+        repo_contents = requests.get(self.repo_contents_url).json()
+        return repo_contents
+
+    def get_repo_download_urls(self):
+        repo_download_urls = []
+        for repo_content in self.repo_contents:
+            if repo_content['type'] == 'file':
+                if self.exclude_file_names:
+                    if repo_content['name'] not in self.exclude_file_names:
+                        repo_download_urls.append(repo_content['download_url'])
+                else:
+                    repo_download_urls.append(repo_content['download_url'])
+            elif repo_content['type'] == 'dir':
+                if self.exclude_folders:
+                    if repo_content['name'] not in self.exclude_folders:
+                        repo_download_urls.extend(self.get_repo_download_urls_from_folder(repo_content['url']))
+                else:
+                    repo_download_urls.extend(self.get_repo_download_urls_from_folder(repo_content['url']))
+        return repo_download_urls
+
+    def get_repo_download_urls_from_folder(self, folder_url):
+        folder_contents = requests.get(folder_url).json()
+        folder_download_urls = []
+        for folder_content in folder_contents:
+            if folder_content['type'] == 'file':
+                if self.exclude_file_names:
+                    if folder_content['name'] not in self.exclude_file_names:
+                        folder_download_urls.append(folder_content['download_url'])
+                else:
+                    folder_download_urls.append(folder_content['download_url'])
+            elif folder_content['type'] == 'dir':
+                if self.exclude_folders:
+                    if folder_content['name'] not in self.exclude_folders:
+                        folder_download_urls.extend(self.get_repo_download_urls_from_folder(folder_content['url']))
+                else:
+                    folder_download_urls.extend(self.get_repo_download_urls_from_folder(folder_content['url']))
+        return folder_download_urls
+
+    def get_repo_download_urls_json(self):
+        repo_download_urls_json = json.dumps(self.repo_download_urls)
+        return repo_download_urls_json
+
+    def write_repo_download_urls_json(self):
+        with open(f'{self.repo_name}_download_urls.json', 'w') as f:
+            f.write(self.repo_download_urls_json)
+
+if __name__ == '__main__':
+    GitHubRepoDownloader("https://github.com/imageplaceholder/quotes/", [], [])
+   # parser = argparse.ArgumentParser()
+   # parser.add_argument('repo_url', help='GitHub repo url')
+   # parser.add_argument('--exclude_file_names', nargs='+', help='List of file names to exclude')
+   # parser.add_argument('--exclude_folders', nargs='+', help='List of folders to exclude')
+   # args = parser.parse_args()
+    #GitHubRepoDownloader(args.repo_url, args.exclude_file_names, args.exclude_folders)
