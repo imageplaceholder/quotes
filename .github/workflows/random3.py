@@ -18,7 +18,7 @@ def get_repo_tree(repo_url):
     repo_tree = requests.get(f'https://api.github.com/repos/{repo_owner}/{repo_name}/branches/main?recursive=1').json()
     # create a list to store the tree
     tree = []
-    repo_tree = repo_tree['commit']['commit']
+    repo_tree = repo_tree['commit']
     print(repo_tree)                    
     # loop through the tree
     for item in repo_tree:
