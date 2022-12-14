@@ -14,7 +14,7 @@ import argparse
 
 #path = args.path
 #exclude = args.exclude
-#output = args.output
+output = ""
 
 if not output:
     output = 'list.json'
