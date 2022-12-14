@@ -21,6 +21,8 @@ if not output:
 
 def list_files(path, exclude):
     files = []
+    if os.path.isdir(file) not True:
+        return
     for file in os.listdir(path):
         if file not in exclude:
             files.append(file)
