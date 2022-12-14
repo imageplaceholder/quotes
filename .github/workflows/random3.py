@@ -27,7 +27,7 @@ class GitHubRepoDownloader:
     def get_repo_download_urls(self):
         repo_download_urls = []
         for repo_content in self.repo_contents:
-            print(repo_content)
+            print(self.repo_contents[repo_content]['type'])
             if repo_content[repo_content] == 'file':
                 if self.exclude_file_names:
                     if repo_content['name'] not in self.exclude_file_names:
