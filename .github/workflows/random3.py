@@ -13,7 +13,7 @@ def write_json(path, exclude_folders=[], exclude_files=[]):
     for root, dirs, files in os.walk(path):
         for folder in dirs:
             if folder not in exclude_folders:
-                json_file[folder] = {}
+                json_file[folder] = {"parent_dir": os.path.join(root, folder)}
                 for root_2, dirs_2, files_2 in os.walk(os.path.join(root, folder)):
                     for file in files_2:
                         if file not in exclude_files:
