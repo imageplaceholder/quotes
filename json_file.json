@@ -1,0 +1,96 @@
+{
+    ".github": {
+        "random2.py": {},
+        "random3.py": {},
+        "template.html": {},
+        "randoms.py": {},
+        "workflow.yaml": {},
+        "github_trending.py": {},
+        "backup.py": {},
+        "generator.py": {}
+    },
+    "test": {
+        "index.html": {},
+        "sdsdf.md": {}
+    },
+    ".git": {
+        "description": {},
+        "config": {},
+        "index": {},
+        "HEAD": {},
+        "FETCH_HEAD": {},
+        "exclude": {},
+        "main": {},
+        "pack-6706ca7d3c717cfcd7eccfa9bed04e2a685223ca.pack": {},
+        "pack-6706ca7d3c717cfcd7eccfa9bed04e2a685223ca.idx": {},
+        "fsmonitor-watchman.sample": {},
+        "pre-applypatch.sample": {},
+        "applypatch-msg.sample": {},
+        "prepare-commit-msg.sample": {},
+        "pre-commit.sample": {},
+        "commit-msg.sample": {},
+        "post-update.sample": {},
+        "pre-rebase.sample": {},
+        "pre-receive.sample": {},
+        "push-to-checkout.sample": {},
+        "pre-push.sample": {},
+        "pre-merge-commit.sample": {},
+        "update.sample": {}
+    },
+    "workflows": {
+        "random2.py": {},
+        "random3.py": {},
+        "template.html": {},
+        "randoms.py": {},
+        "workflow.yaml": {},
+        "github_trending.py": {},
+        "backup.py": {},
+        "generator.py": {}
+    },
+    "test2": {
+        "index.html": {},
+        "ttm.md": {}
+    },
+    "info": {},
+    "refs": {
+        "main": {}
+    },
+    "branches": {},
+    "objects": {
+        "pack-6706ca7d3c717cfcd7eccfa9bed04e2a685223ca.pack": {},
+        "pack-6706ca7d3c717cfcd7eccfa9bed04e2a685223ca.idx": {}
+    },
+    "logs": {
+        "HEAD": {},
+        "main": {}
+    },
+    "hooks": {
+        "fsmonitor-watchman.sample": {},
+        "pre-applypatch.sample": {},
+        "applypatch-msg.sample": {},
+        "prepare-commit-msg.sample": {},
+        "pre-commit.sample": {},
+        "commit-msg.sample": {},
+        "post-update.sample": {},
+        "pre-rebase.sample": {},
+        "pre-receive.sample": {},
+        "push-to-checkout.sample": {},
+        "pre-push.sample": {},
+        "pre-merge-commit.sample": {},
+        "update.sample": {}
+    },
+    "remotes": {
+        "main": {}
+    },
+    "heads": {
+        "main": {}
+    },
+    "tags": {},
+    "origin": {
+        "main": {}
+    },
+    "pack": {
+        "pack-6706ca7d3c717cfcd7eccfa9bed04e2a685223ca.pack": {},
+        "pack-6706ca7d3c717cfcd7eccfa9bed04e2a685223ca.idx": {}
+    }
+}
