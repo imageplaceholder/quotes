@@ -21,11 +21,13 @@ if not output:
 
 def list_files(path, exclude):
     files = []
-    if not os.path.isdir(file):
-        return
-    for file in os.listdir(path):
-        if file not in exclude:
-            files.append(file)
+    for file in path:
+        if not os.path.isdir(file):
+            break
+        else:
+            for file in os.listdir(path):
+                if file not in exclude:
+                    files.append(file)
     return files
 
 def list_folders(path, exclude):
