@@ -80,6 +80,6 @@ def get_repo_tree(repo_url):
         json.dump(tree_list, f, indent=4)
 
 # get the repo url
-repo_url = "https://github.com/imageplaceholder/quotes/"
+repo_url = "imageplaceholder/quotes/"
 # get the repo tree
 get_repo_tree(repo_url)
