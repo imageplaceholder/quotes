@@ -44,7 +44,7 @@ def list_path(path, exclude):
     }
 
 def list_path_recursive(path, exclude):
-    files = list_files(path, exclude)
+   # files = list_files(path, exclude)
     folders = list_folders(path, exclude)
     subfolders = {}
     for folder in folders:
