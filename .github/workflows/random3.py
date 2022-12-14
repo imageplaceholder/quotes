@@ -22,6 +22,7 @@ def get_repo_tree(repo_url):
     print(repo_tree)                    
     # loop through the tree
     for item in repo_tree:
+        item = repo_tree[int(item)]
         print(item)
         # if the item is a folder
         if item == 'tree':
