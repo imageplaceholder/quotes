@@ -11,7 +11,7 @@ def path_to_dict(path):
         d['type'] = "file"
     return d
 
-data = json.dumps(path_to_dict('.'))
+data = path_to_dict('.')
 
 
 def write_json(path, data):
