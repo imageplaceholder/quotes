@@ -22,12 +22,9 @@ if not output:
 def list_files(path, exclude):
     files = []
     for file in path:
-        if not os.path.isdir(file):
-            break
-        else:
-            for file in os.listdir(path):
-                if file not in exclude:
-                    files.append(file)
+        if os.path.isdir(file):
+            if file not in exclude:
+                files.append(file)
     return files
 
 def list_folders(path, exclude):
