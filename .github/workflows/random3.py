@@ -29,9 +29,10 @@ def list_files(path, exclude):
 
 def list_folders(path, exclude):
     folders = []
-    for folder in os.listdir(path):
-        if folder not in exclude:
-            folders.append(folder)
+    for folder in path:
+        if os.path.isdir(folder):
+            if folder not in exclude:
+                folders.append(folder)        
     return folders
 
 def list_path(path, exclude):
