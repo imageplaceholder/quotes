@@ -22,16 +22,16 @@ def get_repo_tree(repo_url):
     print(repo_tree)                    
     # loop through the tree
     for item in repo_tree:
-        item = repo_tree[int(item)]
+        item = repo_tree[item]
         print(item)
         # if the item is a folder
         if item == 'tree':
             # add the folder to the tree
-            tree.append({'name': repo_tree['path'], 'url': repo_tree['url'], 'type': repo_tree['type']})
+            tree.append({'name': item['path'], 'url': item['url'], 'type': item['type']})
         # if the item is a file
         elif item == 'blob':
             # add the file to the tree
-            tree.append({'name': repo_tree['path'], 'url': repo_tree['url'], 'type': repo_tree['type']})
+            tree.append({'name': item['path'], 'url': item['url'], 'type': item['type']})
     # create a list to store the tree
     tree_list = []
     # loop through the tree
