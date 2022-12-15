@@ -1,523 +1,620 @@
 {
     "name": ".",
-    "type": "directory",
-    "children": [
-        {
-            "name": "science.png",
-            "type": "file"
-        },
-        {
-            "name": "love.png",
-            "type": "file"
-        },
-        {
-            "name": "film.png",
-            "type": "file"
-        },
-        {
-            "name": "courage.png",
-            "type": "file"
-        },
-        {
-            "name": "test.html",
-            "type": "file"
-        },
-        {
-            "name": "literature.png",
-            "type": "file"
-        },
-        {
-            "name": "education.png",
-            "type": "file"
-        },
-        {
-            "name": "religion.png",
-            "type": "file"
-        },
-        {
-            "name": "famous-quotes.png",
-            "type": "file"
-        },
-        {
-            "name": "json_file.json",
-            "type": "file"
-        },
-        {
-            "name": "philosophy.png",
-            "type": "file"
-        },
-        {
-            "name": "quotes_tree.json",
-            "type": "file"
-        },
-        {
-            "name": "json_api",
-            "type": "file"
-        },
-        {
-            "name": "humor.png",
-            "type": "file"
-        },
-        {
-            "name": "history.png",
-            "type": "file"
-        },
+    "isDirectory": "true",
+    "content": [
         {
             "name": "pain.png",
-            "type": "file"
+            "isDirectory": "false",
+            "size": 0
         },
         {
-            "name": "conservative.png",
-            "type": "file"
-        },
-        {
-            "name": "humorous.png",
-            "type": "file"
-        },
-        {
-            "name": "time.png",
-            "type": "file"
-        },
-        {
-            "name": "self.png",
-            "type": "file"
-        },
-        {
-            "name": "technology.png",
-            "type": "file"
-        },
-        {
-            "name": "power-quotes.png",
-            "type": "file"
-        },
-        {
-            "name": "download_urls.json",
-            "type": "file"
-        },
-        {
-            "name": "character.png",
-            "type": "file"
-        },
-        {
-            "name": "inspirational.png",
-            "type": "file"
-        },
-        {
-            "name": "friendship.png",
-            "type": "file"
-        },
-        {
-            "name": "index.html",
-            "type": "file"
-        },
-        {
-            "name": "politics.png",
-            "type": "file"
-        },
-        {
-            "name": "success.png",
-            "type": "file"
-        },
-        {
-            "name": "happiness.png",
-            "type": "file"
-        },
-        {
-            "name": "future.png",
-            "type": "file"
-        },
-        {
-            "name": "social-justice.png",
-            "type": "file"
-        },
-        {
-            "name": "life.png",
-            "type": "file"
-        },
-        {
-            "name": "motivational.png",
-            "type": "file"
-        },
-        {
-            "name": "python_repos.svg",
-            "type": "file"
-        },
-        {
-            "name": "sports.png",
-            "type": "file"
-        },
-        {
-            "name": "competition.png",
-            "type": "file"
-        },
-        {
-            "name": "virtue.png",
-            "type": "file"
-        },
-        {
-            "name": "business.png",
-            "type": "file"
-        },
-        {
-            "name": ".github",
-            "type": "directory",
-            "children": [
-                {
-                    "name": "workflows",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "random2.py",
-                            "type": "file"
-                        },
-                        {
-                            "name": "random3.py",
-                            "type": "file"
-                        },
-                        {
-                            "name": "template.html",
-                            "type": "file"
-                        },
-                        {
-                            "name": "randoms.py",
-                            "type": "file"
-                        },
-                        {
-                            "name": "workflow.yaml",
-                            "type": "file"
-                        },
-                        {
-                            "name": "github_trending.py",
-                            "type": "file"
-                        },
-                        {
-                            "name": "backup.py",
-                            "type": "file"
-                        },
-                        {
-                            "name": "generator.py",
-                            "type": "file"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "test",
-            "type": "directory",
-            "children": [
-                {
-                    "name": "me.md",
-                    "type": "file"
-                },
-                {
-                    "name": "index.html",
-                    "type": "file"
-                },
-                {
-                    "name": "test",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "index.html",
-                            "type": "file"
-                        },
-                        {
-                            "name": "sdsdf.md",
-                            "type": "file"
-                        }
-                    ]
-                },
-                {
-                    "name": "test2",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "index.html",
-                            "type": "file"
-                        },
-                        {
-                            "name": "ttm.md",
-                            "type": "file"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "change.png",
-            "type": "file"
-        },
-        {
-            "name": "truth.png",
-            "type": "file"
-        },
-        {
-            "name": "LICENSE",
-            "type": "file"
-        },
-        {
-            "name": "data.json",
-            "type": "file"
-        },
-        {
-            "name": "faith.png",
-            "type": "file"
-        },
-        {
-            "name": "self-help.png",
-            "type": "file"
-        },
-        {
-            "name": "README.md",
-            "type": "file"
-        },
-        {
-            "name": "file_content_paths_by_dir.json",
-            "type": "file"
-        },
-        {
-            "name": "test-tree.json",
-            "type": "file"
+            "name": "imageplaceholder.json",
+            "isDirectory": "false",
+            "size": 0
         },
         {
             "name": "family.png",
-            "type": "file"
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "humorous.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "character.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "self.png",
+            "isDirectory": "false",
+            "size": 0
         },
         {
             "name": "honor.png",
-            "type": "file"
+            "isDirectory": "false",
+            "size": 0
         },
         {
-            "name": "spirituality.png",
-            "type": "file"
+            "name": "friendship.png",
+            "isDirectory": "false",
+            "size": 0
         },
         {
-            "name": ".git",
-            "type": "directory",
-            "children": [
+            "name": "freedom.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "future.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "README.md",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "philosophy.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": ".github",
+            "isDirectory": "true",
+            "content": [
                 {
-                    "name": "info",
-                    "type": "directory",
-                    "children": [
+                    "name": "workflows",
+                    "isDirectory": "true",
+                    "content": [
                         {
-                            "name": "exclude",
-                            "type": "file"
+                            "name": "generator.py",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "randoms.py",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "random3.py",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "github_trending.py",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "backup.py",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "template.html",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "random2.py",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "workflow.yaml",
+                            "isDirectory": "false",
+                            "size": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "religion.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "business.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "quotes_tree.json",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "history.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "love.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "politics.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "sports.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "education.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "technology.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "time.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "truth.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "science.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "inspirational.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "leadership.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "faith.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "test-tree.json",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "test",
+            "isDirectory": "true",
+            "content": [
+                {
+                    "name": "me.md",
+                    "isDirectory": "false",
+                    "size": 0
+                },
+                {
+                    "name": "test2",
+                    "isDirectory": "true",
+                    "content": [
+                        {
+                            "name": "index.html",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "ttm.md",
+                            "isDirectory": "false",
+                            "size": 0
                         }
                     ]
                 },
                 {
-                    "name": "description",
-                    "type": "file"
-                },
-                {
-                    "name": "config",
-                    "type": "file"
-                },
-                {
-                    "name": "refs",
-                    "type": "directory",
-                    "children": [
+                    "name": "test",
+                    "isDirectory": "true",
+                    "content": [
                         {
-                            "name": "remotes",
-                            "type": "directory",
-                            "children": [
-                                {
-                                    "name": "origin",
-                                    "type": "directory",
-                                    "children": [
-                                        {
-                                            "name": "main",
-                                            "type": "file"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "name": "sdsdf.md",
+                            "isDirectory": "false",
+                            "size": 0
                         },
                         {
-                            "name": "heads",
-                            "type": "directory",
-                            "children": [
-                                {
-                                    "name": "main",
-                                    "type": "file"
-                                }
-                            ]
+                            "name": "index.html",
+                            "isDirectory": "false",
+                            "size": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "index.html",
+                    "isDirectory": "false",
+                    "size": 0
+                }
+            ]
+        },
+        {
+            "name": "social-justice.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "success.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "file_content_paths_by_dir.json",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "life.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": ".git",
+            "isDirectory": "true",
+            "content": [
+                {
+                    "name": "FETCH_HEAD",
+                    "isDirectory": "false",
+                    "size": 0
+                },
+                {
+                    "name": "index",
+                    "isDirectory": "false",
+                    "size": 0
+                },
+                {
+                    "name": "objects",
+                    "isDirectory": "true",
+                    "content": [
+                        {
+                            "name": "info",
+                            "isDirectory": "true",
+                            "content": []
                         },
                         {
-                            "name": "tags",
-                            "type": "directory",
-                            "children": []
+                            "name": "pack",
+                            "isDirectory": "true",
+                            "content": [
+                                {
+                                    "name": "pack-8a526a5d0f405915bb0b4868a7f9a4fd92248d04.pack",
+                                    "isDirectory": "false",
+                                    "size": 0
+                                },
+                                {
+                                    "name": "pack-8a526a5d0f405915bb0b4868a7f9a4fd92248d04.idx",
+                                    "isDirectory": "false",
+                                    "size": 0
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "name": "branches",
-                    "type": "directory",
-                    "children": []
+                    "isDirectory": "true",
+                    "content": []
                 },
                 {
-                    "name": "index",
-                    "type": "file"
-                },
-                {
-                    "name": "HEAD",
-                    "type": "file"
-                },
-                {
-                    "name": "FETCH_HEAD",
-                    "type": "file"
-                },
-                {
-                    "name": "objects",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "info",
-                            "type": "directory",
-                            "children": []
-                        },
-                        {
-                            "name": "pack",
-                            "type": "directory",
-                            "children": [
-                                {
-                                    "name": "pack-75334a95bf37844b999ab04336178e59bc3dca05.pack",
-                                    "type": "file"
-                                },
-                                {
-                                    "name": "pack-75334a95bf37844b999ab04336178e59bc3dca05.idx",
-                                    "type": "file"
-                                }
-                            ]
-                        }
-                    ]
+                    "name": "config",
+                    "isDirectory": "false",
+                    "size": 0
                 },
                 {
                     "name": "logs",
-                    "type": "directory",
-                    "children": [
+                    "isDirectory": "true",
+                    "content": [
+                        {
+                            "name": "HEAD",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
                         {
                             "name": "refs",
-                            "type": "directory",
-                            "children": [
+                            "isDirectory": "true",
+                            "content": [
+                                {
+                                    "name": "heads",
+                                    "isDirectory": "true",
+                                    "content": [
+                                        {
+                                            "name": "main",
+                                            "isDirectory": "false",
+                                            "size": 0
+                                        }
+                                    ]
+                                },
                                 {
                                     "name": "remotes",
-                                    "type": "directory",
-                                    "children": [
+                                    "isDirectory": "true",
+                                    "content": [
                                         {
                                             "name": "origin",
-                                            "type": "directory",
-                                            "children": [
+                                            "isDirectory": "true",
+                                            "content": [
                                                 {
                                                     "name": "main",
-                                                    "type": "file"
+                                                    "isDirectory": "false",
+                                                    "size": 0
                                                 }
                                             ]
                                         }
                                     ]
-                                },
-                                {
-                                    "name": "heads",
-                                    "type": "directory",
-                                    "children": [
-                                        {
-                                            "name": "main",
-                                            "type": "file"
-                                        }
-                                    ]
                                 }
                             ]
-                        },
-                        {
-                            "name": "HEAD",
-                            "type": "file"
                         }
                     ]
                 },
                 {
+                    "name": "HEAD",
+                    "isDirectory": "false",
+                    "size": 0
+                },
+                {
                     "name": "hooks",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "fsmonitor-watchman.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-applypatch.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "applypatch-msg.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "prepare-commit-msg.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-commit.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "commit-msg.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "post-update.sample",
-                            "type": "file"
-                        },
+                    "isDirectory": "true",
+                    "content": [
                         {
                             "name": "pre-rebase.sample",
-                            "type": "file"
+                            "isDirectory": "false",
+                            "size": 0
                         },
                         {
-                            "name": "pre-receive.sample",
-                            "type": "file"
+                            "name": "fsmonitor-watchman.sample",
+                            "isDirectory": "false",
+                            "size": 0
                         },
                         {
                             "name": "push-to-checkout.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-push.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-merge-commit.sample",
-                            "type": "file"
+                            "isDirectory": "false",
+                            "size": 0
                         },
                         {
                             "name": "update.sample",
-                            "type": "file"
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "commit-msg.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "pre-merge-commit.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "applypatch-msg.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "pre-push.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "pre-commit.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "pre-receive.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "post-update.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "pre-applypatch.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        },
+                        {
+                            "name": "prepare-commit-msg.sample",
+                            "isDirectory": "false",
+                            "size": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "info",
+                    "isDirectory": "true",
+                    "content": [
+                        {
+                            "name": "exclude",
+                            "isDirectory": "false",
+                            "size": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "description",
+                    "isDirectory": "false",
+                    "size": 0
+                },
+                {
+                    "name": "refs",
+                    "isDirectory": "true",
+                    "content": [
+                        {
+                            "name": "tags",
+                            "isDirectory": "true",
+                            "content": []
+                        },
+                        {
+                            "name": "heads",
+                            "isDirectory": "true",
+                            "content": [
+                                {
+                                    "name": "main",
+                                    "isDirectory": "false",
+                                    "size": 0
+                                }
+                            ]
+                        },
+                        {
+                            "name": "remotes",
+                            "isDirectory": "true",
+                            "content": [
+                                {
+                                    "name": "origin",
+                                    "isDirectory": "true",
+                                    "content": [
+                                        {
+                                            "name": "main",
+                                            "isDirectory": "false",
+                                            "size": 0
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "name": "war.png",
-            "type": "file"
+            "name": "python_repos.svg",
+            "isDirectory": "false",
+            "size": 0
         },
         {
-            "name": "freedom.png",
-            "type": "file"
+            "name": "happiness.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "virtue.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "competition.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "json_api",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "LICENSE",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "index.html",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "power-quotes.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "test.html",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "data.json",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "humor.png",
+            "isDirectory": "false",
+            "size": 0
         },
         {
             "name": "nature.png",
-            "type": "file"
+            "isDirectory": "false",
+            "size": 0
         },
         {
-            "name": "leadership.png",
-            "type": "file"
+            "name": "motivational.png",
+            "isDirectory": "false",
+            "size": 0
         },
         {
-            "name": "imageplaceholder.json",
-            "type": "file"
+            "name": "literature.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "self-help.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "download_urls.json",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "courage.png",
+            "isDirectory": "false",
+            "size": 0
         },
         {
             "name": "wisdom.png",
-            "type": "file"
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "conservative.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "spirituality.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "famous-quotes.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "war.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "json_file.json",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "film.png",
+            "isDirectory": "false",
+            "size": 0
+        },
+        {
+            "name": "change.png",
+            "isDirectory": "false",
+            "size": 0
         }
     ]
 }
