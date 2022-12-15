@@ -3,15 +3,71 @@
     "type": "directory",
     "children": [
         {
+            "name": "science.png",
+            "type": "file"
+        },
+        {
+            "name": "love.png",
+            "type": "file"
+        },
+        {
+            "name": "film.png",
+            "type": "file"
+        },
+        {
+            "name": "courage.png",
+            "type": "file"
+        },
+        {
+            "name": "test.html",
+            "type": "file"
+        },
+        {
+            "name": "literature.png",
+            "type": "file"
+        },
+        {
+            "name": "education.png",
+            "type": "file"
+        },
+        {
+            "name": "religion.png",
+            "type": "file"
+        },
+        {
+            "name": "famous-quotes.png",
+            "type": "file"
+        },
+        {
+            "name": "json_file.json",
+            "type": "file"
+        },
+        {
+            "name": "philosophy.png",
+            "type": "file"
+        },
+        {
+            "name": "quotes_tree.json",
+            "type": "file"
+        },
+        {
+            "name": "json_api",
+            "type": "file"
+        },
+        {
+            "name": "humor.png",
+            "type": "file"
+        },
+        {
+            "name": "history.png",
+            "type": "file"
+        },
+        {
             "name": "pain.png",
             "type": "file"
         },
         {
-            "name": "imageplaceholder.json",
-            "type": "file"
-        },
-        {
-            "name": "family.png",
+            "name": "conservative.png",
             "type": "file"
         },
         {
@@ -19,7 +75,7 @@
             "type": "file"
         },
         {
-            "name": "character.png",
+            "name": "time.png",
             "type": "file"
         },
         {
@@ -27,7 +83,23 @@
             "type": "file"
         },
         {
-            "name": "honor.png",
+            "name": "technology.png",
+            "type": "file"
+        },
+        {
+            "name": "power-quotes.png",
+            "type": "file"
+        },
+        {
+            "name": "download_urls.json",
+            "type": "file"
+        },
+        {
+            "name": "character.png",
+            "type": "file"
+        },
+        {
+            "name": "inspirational.png",
             "type": "file"
         },
         {
@@ -35,7 +107,19 @@
             "type": "file"
         },
         {
-            "name": "freedom.png",
+            "name": "index.html",
+            "type": "file"
+        },
+        {
+            "name": "politics.png",
+            "type": "file"
+        },
+        {
+            "name": "success.png",
+            "type": "file"
+        },
+        {
+            "name": "happiness.png",
             "type": "file"
         },
         {
@@ -43,11 +127,35 @@
             "type": "file"
         },
         {
-            "name": "README.md",
+            "name": "social-justice.png",
             "type": "file"
         },
         {
-            "name": "philosophy.png",
+            "name": "life.png",
+            "type": "file"
+        },
+        {
+            "name": "motivational.png",
+            "type": "file"
+        },
+        {
+            "name": "python_repos.svg",
+            "type": "file"
+        },
+        {
+            "name": "sports.png",
+            "type": "file"
+        },
+        {
+            "name": "competition.png",
+            "type": "file"
+        },
+        {
+            "name": "virtue.png",
+            "type": "file"
+        },
+        {
+            "name": "business.png",
             "type": "file"
         },
         {
@@ -59,7 +167,15 @@
                     "type": "directory",
                     "children": [
                         {
-                            "name": "generator.py",
+                            "name": "random2.py",
+                            "type": "file"
+                        },
+                        {
+                            "name": "random3.py",
+                            "type": "file"
+                        },
+                        {
+                            "name": "template.html",
                             "type": "file"
                         },
                         {
@@ -67,7 +183,7 @@
                             "type": "file"
                         },
                         {
-                            "name": "random3.py",
+                            "name": "workflow.yaml",
                             "type": "file"
                         },
                         {
@@ -79,84 +195,12 @@
                             "type": "file"
                         },
                         {
-                            "name": "template.html",
-                            "type": "file"
-                        },
-                        {
-                            "name": "random2.py",
-                            "type": "file"
-                        },
-                        {
-                            "name": "workflow.yaml",
+                            "name": "generator.py",
                             "type": "file"
                         }
                     ]
                 }
             ]
-        },
-        {
-            "name": "religion.png",
-            "type": "file"
-        },
-        {
-            "name": "business.png",
-            "type": "file"
-        },
-        {
-            "name": "quotes_tree.json",
-            "type": "file"
-        },
-        {
-            "name": "history.png",
-            "type": "file"
-        },
-        {
-            "name": "love.png",
-            "type": "file"
-        },
-        {
-            "name": "politics.png",
-            "type": "file"
-        },
-        {
-            "name": "sports.png",
-            "type": "file"
-        },
-        {
-            "name": "education.png",
-            "type": "file"
-        },
-        {
-            "name": "technology.png",
-            "type": "file"
-        },
-        {
-            "name": "time.png",
-            "type": "file"
-        },
-        {
-            "name": "truth.png",
-            "type": "file"
-        },
-        {
-            "name": "science.png",
-            "type": "file"
-        },
-        {
-            "name": "inspirational.png",
-            "type": "file"
-        },
-        {
-            "name": "leadership.png",
-            "type": "file"
-        },
-        {
-            "name": "faith.png",
-            "type": "file"
-        },
-        {
-            "name": "test-tree.json",
-            "type": "file"
         },
         {
             "name": "test",
@@ -165,6 +209,24 @@
                 {
                     "name": "me.md",
                     "type": "file"
+                },
+                {
+                    "name": "index.html",
+                    "type": "file"
+                },
+                {
+                    "name": "test",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "index.html",
+                            "type": "file"
+                        },
+                        {
+                            "name": "sdsdf.md",
+                            "type": "file"
+                        }
+                    ]
                 },
                 {
                     "name": "test2",
@@ -179,33 +241,35 @@
                             "type": "file"
                         }
                     ]
-                },
-                {
-                    "name": "test",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "sdsdf.md",
-                            "type": "file"
-                        },
-                        {
-                            "name": "index.html",
-                            "type": "file"
-                        }
-                    ]
-                },
-                {
-                    "name": "index.html",
-                    "type": "file"
                 }
             ]
         },
         {
-            "name": "social-justice.png",
+            "name": "change.png",
             "type": "file"
         },
         {
-            "name": "success.png",
+            "name": "truth.png",
+            "type": "file"
+        },
+        {
+            "name": "LICENSE",
+            "type": "file"
+        },
+        {
+            "name": "data.json",
+            "type": "file"
+        },
+        {
+            "name": "faith.png",
+            "type": "file"
+        },
+        {
+            "name": "self-help.png",
+            "type": "file"
+        },
+        {
+            "name": "README.md",
             "type": "file"
         },
         {
@@ -213,7 +277,19 @@
             "type": "file"
         },
         {
-            "name": "life.png",
+            "name": "test-tree.json",
+            "type": "file"
+        },
+        {
+            "name": "family.png",
+            "type": "file"
+        },
+        {
+            "name": "honor.png",
+            "type": "file"
+        },
+        {
+            "name": "spirituality.png",
             "type": "file"
         },
         {
@@ -221,11 +297,75 @@
             "type": "directory",
             "children": [
                 {
-                    "name": "FETCH_HEAD",
+                    "name": "info",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "exclude",
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "name": "description",
                     "type": "file"
                 },
                 {
+                    "name": "config",
+                    "type": "file"
+                },
+                {
+                    "name": "refs",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "remotes",
+                            "type": "directory",
+                            "children": [
+                                {
+                                    "name": "origin",
+                                    "type": "directory",
+                                    "children": [
+                                        {
+                                            "name": "main",
+                                            "type": "file"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "heads",
+                            "type": "directory",
+                            "children": [
+                                {
+                                    "name": "main",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "tags",
+                            "type": "directory",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "branches",
+                    "type": "directory",
+                    "children": []
+                },
+                {
                     "name": "index",
+                    "type": "file"
+                },
+                {
+                    "name": "HEAD",
+                    "type": "file"
+                },
+                {
+                    "name": "FETCH_HEAD",
                     "type": "file"
                 },
                 {
@@ -242,11 +382,11 @@
                             "type": "directory",
                             "children": [
                                 {
-                                    "name": "pack-ad0867fc7bf91baef2e1b1961d8954caad9cf545.idx",
+                                    "name": "pack-75334a95bf37844b999ab04336178e59bc3dca05.pack",
                                     "type": "file"
                                 },
                                 {
-                                    "name": "pack-ad0867fc7bf91baef2e1b1961d8954caad9cf545.pack",
+                                    "name": "pack-75334a95bf37844b999ab04336178e59bc3dca05.idx",
                                     "type": "file"
                                 }
                             ]
@@ -254,36 +394,13 @@
                     ]
                 },
                 {
-                    "name": "branches",
-                    "type": "directory",
-                    "children": []
-                },
-                {
-                    "name": "config",
-                    "type": "file"
-                },
-                {
                     "name": "logs",
                     "type": "directory",
                     "children": [
                         {
-                            "name": "HEAD",
-                            "type": "file"
-                        },
-                        {
                             "name": "refs",
                             "type": "directory",
                             "children": [
-                                {
-                                    "name": "heads",
-                                    "type": "directory",
-                                    "children": [
-                                        {
-                                            "name": "main",
-                                            "type": "file"
-                                        }
-                                    ]
-                                },
                                 {
                                     "name": "remotes",
                                     "type": "directory",
@@ -299,112 +416,9 @@
                                             ]
                                         }
                                     ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "HEAD",
-                    "type": "file"
-                },
-                {
-                    "name": "hooks",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "pre-rebase.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "fsmonitor-watchman.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "push-to-checkout.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "update.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "commit-msg.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-merge-commit.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "applypatch-msg.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-push.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-commit.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-receive.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "post-update.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "pre-applypatch.sample",
-                            "type": "file"
-                        },
-                        {
-                            "name": "prepare-commit-msg.sample",
-                            "type": "file"
-                        }
-                    ]
-                },
-                {
-                    "name": "info",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "exclude",
-                            "type": "file"
-                        }
-                    ]
-                },
-                {
-                    "name": "description",
-                    "type": "file"
-                },
-                {
-                    "name": "refs",
-                    "type": "directory",
-                    "children": [
-                        {
-                            "name": "tags",
-                            "type": "directory",
-                            "children": []
-                        },
-                        {
-                            "name": "heads",
-                            "type": "directory",
-                            "children": [
+                                },
                                 {
-                                    "name": "main",
-                                    "type": "file"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "remotes",
-                            "type": "directory",
-                            "children": [
-                                {
-                                    "name": "origin",
+                                    "name": "heads",
                                     "type": "directory",
                                     "children": [
                                         {
@@ -414,53 +428,79 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "name": "HEAD",
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "name": "hooks",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "fsmonitor-watchman.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "pre-applypatch.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "applypatch-msg.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "prepare-commit-msg.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "pre-commit.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "commit-msg.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "post-update.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "pre-rebase.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "pre-receive.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "push-to-checkout.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "pre-push.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "pre-merge-commit.sample",
+                            "type": "file"
+                        },
+                        {
+                            "name": "update.sample",
+                            "type": "file"
                         }
                     ]
                 }
             ]
         },
         {
-            "name": "python_repos.svg",
+            "name": "war.png",
             "type": "file"
         },
         {
-            "name": "happiness.png",
-            "type": "file"
-        },
-        {
-            "name": "virtue.png",
-            "type": "file"
-        },
-        {
-            "name": "competition.png",
-            "type": "file"
-        },
-        {
-            "name": "json_api",
-            "type": "file"
-        },
-        {
-            "name": "LICENSE",
-            "type": "file"
-        },
-        {
-            "name": "index.html",
-            "type": "file"
-        },
-        {
-            "name": "power-quotes.png",
-            "type": "file"
-        },
-        {
-            "name": "test.html",
-            "type": "file"
-        },
-        {
-            "name": "data.json",
-            "type": "file"
-        },
-        {
-            "name": "humor.png",
+            "name": "freedom.png",
             "type": "file"
         },
         {
@@ -468,55 +508,15 @@
             "type": "file"
         },
         {
-            "name": "motivational.png",
+            "name": "leadership.png",
             "type": "file"
         },
         {
-            "name": "literature.png",
-            "type": "file"
-        },
-        {
-            "name": "self-help.png",
-            "type": "file"
-        },
-        {
-            "name": "download_urls.json",
-            "type": "file"
-        },
-        {
-            "name": "courage.png",
+            "name": "imageplaceholder.json",
             "type": "file"
         },
         {
             "name": "wisdom.png",
-            "type": "file"
-        },
-        {
-            "name": "conservative.png",
-            "type": "file"
-        },
-        {
-            "name": "spirituality.png",
-            "type": "file"
-        },
-        {
-            "name": "famous-quotes.png",
-            "type": "file"
-        },
-        {
-            "name": "war.png",
-            "type": "file"
-        },
-        {
-            "name": "json_file.json",
-            "type": "file"
-        },
-        {
-            "name": "film.png",
-            "type": "file"
-        },
-        {
-            "name": "change.png",
             "type": "file"
         }
     ]
