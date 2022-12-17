@@ -30,7 +30,7 @@ TO DO
 import jinja2
 
 # Load the Jinja template
-template_loader = jinja2.FileSystemLoader(searchpath="./github/workflows")
+template_loader = jinja2.FileSystemLoader(searchpath="./.github/workflows")
 template_env = jinja2.Environment(loader=template_loader)
 template = template_env.get_template("template.jinja")
 
