@@ -38,7 +38,7 @@ template = template_env.get_template("template.jinja")
 template_variables = FirstFolderProcessed
 
 # Render the template with the variables
-output = template.render(template_variables)
+output = template.render(FirstFolderProcessed = FirstFolderProcessed)
 
 print(output)
 
