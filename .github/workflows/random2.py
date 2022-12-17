@@ -14,7 +14,7 @@ import subprocess
 
 
 ## Check if parent directory. 
-FirstFolderProcessed = False
+FirstFolderProcessed = str(False)
 
 
 
@@ -42,6 +42,10 @@ output = template.render(template_variables)
 
 print(output)
 
+
+
+## Check if parent directory. 
+FirstFolderProcessed = False
 
 # Functions below provide file info details for the HTML index
 
