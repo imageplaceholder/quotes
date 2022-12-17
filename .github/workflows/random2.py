@@ -35,7 +35,7 @@ template_env = jinja2.Environment(loader=template_loader)
 template = template_env.get_template("template.jinja")
 
 # Set the variables that will be used in the template
-template_variables = {"variable": "value", "items": ["item1", "item2", "item3"]}
+template_variables = FirstFolderProcessed
 
 # Render the template with the variables
 output = template.render(template_variables)
