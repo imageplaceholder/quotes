@@ -29,8 +29,8 @@ jobs:
       - name: Run the quote generator
         working-directory: ./
         run: |
-         python .github/workflows/random2.py
-         pipreqs .github/workflows
+         pipreqs .github/workflows/t/
+   #    python .github/workflows/random2.py
       - name: Commit and Push
         run: |
          git config --global user.name "github-actions[bot]"
