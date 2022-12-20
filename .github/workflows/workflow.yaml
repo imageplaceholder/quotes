@@ -30,7 +30,7 @@ jobs:
         working-directory: ./
         run: |
          python .github/workflows/random2.py
-         pipreqs .github/workflows/random2.py ./
+         pipreqs .github/workflows
       - name: Commit and Push
         run: |
          git config --global user.name "github-actions[bot]"
