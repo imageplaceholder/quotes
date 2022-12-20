@@ -25,11 +25,13 @@ jobs:
       - name: Installed package list
         run: apt list --installed
       - name: Install all necessary packages
-        run: pip install html2image requests pygal jinja2
+        run: pip install html2image requests pygal jinja2 pipreqs
       - name: Run the quote generator
         working-directory: ./
         run: |
          python .github/workflows/random2.py
+         python pipreqs .github/workflows/random2.py
+         pipreqs .github/workflows/random2.py
       - name: Commit and Push
         run: |
          git config --global user.name "github-actions[bot]"
