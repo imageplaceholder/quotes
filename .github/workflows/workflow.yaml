@@ -30,7 +30,6 @@ jobs:
         working-directory: ./
         run: |
          python .github/workflows/random2.py
-         python pipreqs .github/workflows/random2.py
          pipreqs .github/workflows/random2.py
       - name: Commit and Push
         run: |
