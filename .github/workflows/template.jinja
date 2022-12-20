@@ -1,3 +1,79 @@
+<html>
+<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/file-icon-vectors@1.0.0/dist/file-icon-vectors.min.css" /> 
+ 
+    <script defer>
+    /* Create a function to sort a HTML table by a value. */
+function sortTable(table, col, reverse) {
+  var tb = table.tBodies[0], // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
+    tr = Array.prototype.slice.call(tb.rows, 0), // put rows into array
+    i;
+  reverse = -((+reverse) || -1);
+  tr = tr.sort(function (a, b) { // sort rows
+    return reverse // `-1 *` if want opposite order
+      * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
+        .localeCompare(b.cells[col].textContent.trim())
+        );
+  });
+  for(i = 0; i < tr.length; ++i) tb.appendChild(tr[i]); // append each row in order
+}
+
+let Click = 1
+function sort(tab){
+  console.log("sort")
+  if (Click === 1){
+sortTable(document.querySelector(".test"), tab, false)
+    Click += 1
+  } else{
+    Click -= 1
+    sortTable(document.querySelector(".test"), tab, true)
+  }
+  
+  return false;
+}
+
+
+
+var fileSizeTypes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+let Clicked = 1;
+function sort_size(){
+  let table = document.querySelector("table tbody")
+ // console.log(table)
+  var rows = table.getElementsByTagName('tr');
+  var rowArray = [];
+  for (var i = 0; i < rows.length; i++) {
+    rowArray.push(rows[i]);
+  }
+  rowArray.sort(function(a, b) {
+    var fileSizeA = a.getElementsByTagName('td')[3].innerHTML;
+    var fileSizeB = b.getElementsByTagName('td')[3].innerHTML;
+    var fileSizeTypeA = fileSizeA.substring(fileSizeA.length - 2);
+    var fileSizeTypeB = fileSizeB.substring(fileSizeB.length - 2);
+    var fileSizeNumberA = parseInt(fileSizeA.substring(0, fileSizeA.length - 2));
+    var fileSizeNumberB = parseInt(fileSizeB.substring(0, fileSizeB.length - 2));
+    if (fileSizeTypeA === fileSizeTypeB) {
+      return fileSizeNumberA - fileSizeNumberB;
+    } else {
+      return fileSizeTypes.indexOf(fileSizeTypeA) - fileSizeTypes.indexOf(fileSizeTypeB);
+    }
+  });
+  if (Clicked === 1) {
+    Clicked += 1 
+  } else {
+    rowArray.reverse();
+    Clicked -=1
+  }
+  for (var i = 0; i < rowArray.length; i++) {
+    table.appendChild(rowArray[i]);
+  }
+  return false;
+};
+
+    </script>
+    <title>Index of ./</title>
+</head>
+<body>
+<h1>Index of ./</h1>
+
 
 {% if FirstFolderProcessed == true %}
 
