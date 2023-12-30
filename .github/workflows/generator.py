@@ -118,13 +118,16 @@ button:hover{
 generate()
 
 import json
-
+from datetime import datetime
 
 data = {}
 for item in tags:
     data[item] = f'https://imageplaceholder.github.io/quotes/{item}.png'
 
-
+# Add lastUpdated timestamp
+last_updated_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+data_to_dump = {'lastUpdated': last_updated_time, 'quotes': data}
 
 with open('data.json', 'w', encoding='utf-8') as f:
-    json.dump(data, f, ensure_ascii=False, indent=4)
+    json.dump(data_to_dump, f, ensure_ascii=False, indent=4)
+
