@@ -30,7 +30,7 @@ def generate():
   var author;
   
   function getQuote(){{    
-    var forismaticAPI = "https://corsproxy.io/?http://api.quotable.io/random?tags={i}";  
+    var forismaticAPI = "https://api.quotable.io/random?tags={i}";  
     
     $.getJSON(forismaticAPI, function(data) {{
       quote = data.content;
