@@ -30,7 +30,7 @@ def generate():
   var author;
   
   function getQuote(){{    
-    var forismaticAPI = "https://florinbobis-quotes-net.hf.space/random?tags={i}";  
+    var forismaticAPI = "https://florinbobis-quotes-net.hf.space/quotes/search?query={i}";  
     
     $.getJSON(forismaticAPI, function(data) {{
       quote = data.content;
