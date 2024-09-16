@@ -33,10 +33,10 @@ def generate():
     var forismaticAPI = "https://florinbobis-quotes-net.hf.space/quotes/search?query={i}";  
     
     $.getJSON(forismaticAPI, function(data) {{
-      quote = data.content;
-      author = data.author;
-       $(".quote").text(data.content);
-       $(".author").text("-"+data.author);
+      quote = data[0].quoteText;
+      author = data[0].author;
+       $(".quote").text(quote);
+       $(".author").text("-"+author);
     }});   
   }}; //getQuote function
   
