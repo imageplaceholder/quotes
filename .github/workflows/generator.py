@@ -33,8 +33,8 @@ def generate():
     var forismaticAPI = "https://johndturn-quotableapiproxy.web.val.run/random?tags={i}";  
     
     $.getJSON(forismaticAPI, function(data) {{
-      quote = data.content;
-      author = data.author;
+      quote = data[0].content;
+      author = data[0].author;
        $(".quote").text(quote);
        $(".author").text("-"+author);
     }});   
