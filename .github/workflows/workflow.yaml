@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       Files:
-         description: 'URL(s) or File(s) to take screenshot of (seperate by comma):'
-         required: true
-         default: "html/quote.html,"
+        description: 'URL(s) or File(s) to take screenshot of (separate by comma):'
+        required: true
+        default: "html/quote.html"
   schedule:
-    - cron: "59 23, * * *"
+    - cron: '59 23 * * *'  # Every day at 23:59
 
 jobs:
   Screenshotter:
@@ -17,31 +17,41 @@ jobs:
       - name: Check out this repo
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Puppeteer Chromium
+        run: |
+          npm install -g @puppeteer/browsers
+          npx @puppeteer/browsers install chrome-headless-shell@stable
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-      - name: Installed package list
-        run: apt list --installed
-      - name: Install all necessary packages
-        run: pip install html2image requests 
-        # pygal jinja2 pipreqs
+
+      - name: Install Python packages
+        run: pip install html2image requests
+
       - name: Run the quote generator
-        working-directory: ./
         run: |
-         python .github/workflows/generator.py
-   #    python .github/workflows/random2.py
+          python .github/workflows/generator.py
         continue-on-error: true
+
       - name: Commit and Push
         id: updateQuotes
         run: |
-         git config --global user.name "github-actions[bot]"
-         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-         git add -A
-         git commit -m "Image updated"
-         git push
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Image updated"
+          git push
         continue-on-error: true
+
       - name: Check on failures
         if: steps.updateQuotes.outcome != 'success'
         uses: JasonEtco/create-an-issue@v2
