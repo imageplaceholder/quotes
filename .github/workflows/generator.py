@@ -33,7 +33,6 @@ tags = [
     "happiness",
     "history",
     "honor",
-    "humor",
     "humorous",
     "inspirational",
     "leadership",
